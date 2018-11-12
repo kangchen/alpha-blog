@@ -3,7 +3,7 @@
 echo "You started with $# parameters " $1
 clear
 date
-ip="18.237.96.241"
+ip="34.218.223.210"
 echo
 echo "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
 echo "LLL ----- ALPHA-BLOG FULL DEPLOYMENT ----- LLL"
