@@ -1,5 +1,5 @@
 # Replace 127.0.0.1 with your server's IP address!
-server '54.200.197.77', user: 'ubuntu', roles: %w{app web}
+server '54.200.197.77', user: 'ubuntu', roles: %w{app web db}
 
 # server-based syntax
 # ======================
