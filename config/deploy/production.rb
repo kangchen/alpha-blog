@@ -1,5 +1,4 @@
 # Replace 127.0.0.1 with your server's IP address!
-server '54.200.197.77', user: 'ubuntu', roles: %w{app web}
 
 # server-based syntax
 # ======================
@@ -10,7 +9,7 @@ server '54.200.197.77', user: 'ubuntu', roles: %w{app web}
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-
+server '54.200.197.77', user: 'ubuntu', roles: %w{app web}
 
 # role-based syntax
 # ==================
