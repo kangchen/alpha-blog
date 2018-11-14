@@ -9,6 +9,8 @@ set :repo_url, "git@github.com:kangchen/alpha-blog.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/ubuntu/Sites/alpha-blog"
+# set :rvm_type, :user
+# set :rvm_ruby_version, '2.5.3'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
