@@ -4,11 +4,12 @@ lock "~> 3.11.0"
 set :application, "alpha-blog"
 set :repo_url, "git@github.com:kangchen/alpha-blog.git"
 
+set :passenger_restart_with_touch, true
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/ubuntu/Sites/alpha-blog"
+set :deploy_to, "/usr/share/nginx/html/"
 # set :rvm_type, :user
 # set :rvm_ruby_version, '2.5.3'
 
