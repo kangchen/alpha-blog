@@ -46,6 +46,7 @@
 
  a:hover {
      color: #0668cf;
+     font-size: 28px;
      text-decoration: none;
  }
 
@@ -69,5 +70,5 @@
  }
 
  #menu:hover {
-     color: #f7f507;
+     /* color: #f7f507; */
  }
