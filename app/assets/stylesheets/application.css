@@ -24,7 +24,7 @@
      font-family: sans-serif;
      font-size: 1.2em;
      background: #888784;
-     color: #f2f5eb;
+     color: #0668cf;
      height: 55px;
      line-height: 50px;
      width: 100%;
@@ -34,26 +34,27 @@
      z-index: 5;
  }
 
- a:link {
-     color: #f2f5eb;
+a {text-decoration: none; }
+
+ /* a:link {
+     color: white;
      text-decoration: none;
  }
 
  a:visited {
-     color: #f2f5eb;
+     color: white;
      text-decoration: none;
  }
 
  a:hover {
-     color: #0668cf;
-     /* font-size: 28px; */
+     color: white;
      text-decoration: none;
  }
 
  a:active {
-     color: #f2f5eb;
+     color: white;
      text-decoration: none;
- }
+ } */
 
  .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
      background-color: #717474;
@@ -66,9 +67,18 @@
      font-family: fantasy;
      font-size: 1.2em;
      font-weight: bold;
+     color: white;
      outline: none;
  }
 
  #menu:hover {
-     /* color: #f7f507; */
+     color: #0d60ac;
+ }
+
+ /* #menu:not(:hover) {
+     color: white;
+ } */
+
+ #menu:focus {
+   color: #0d60ac;
  }
