@@ -12,16 +12,9 @@
     <!-- <base href="/"> -->
 </head>
 
-<body bgcolor="lightyellow">
+<body>
 
-    <div class="headerMenu">
-        <div class="">
-            <!-- <a ui-sref="about" id="about">About</a> -->
-            <%= link_to 'Home', root_path, :id => 'menu' %> &nbsp &nbsp
-            <%= link_to 'About', about_path, :id => 'menu' %>
-            <!-- <a href="/welcome/"> Home </a> -->
-        </div>
-    </div>
+ <%= render 'layouts/header' %>
 
   <br><br><br>
    <h1 align="center" style="font-family: sans-serif"> Welcome to the About Page </h1>

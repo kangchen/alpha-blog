@@ -14,18 +14,10 @@
 
 <body bgcolor="#c0c3e4">
 
-    <div class="headerMenu">
-        <div class="center">
-            <!-- <a ui-sref="home" id="home">Home</a> -->
-            <!-- <a href="/welcome/"> Home </a> -->
-          <%= link_to 'Home', root_path, :id => 'menu' %>  &nbsp &nbsp
-          <%= link_to 'About', about_path, :id => 'menu' %>
-        </div>
+  <%= render 'layouts/header' %>
 
-    </div>
 
-  <br><br><br>
-   <h1 align="center" style="font-family: sans-serif"> Welcome to the Home Page </h1>
+   <!-- <h1 align="center" style="font-family: sans-serif"> Welcome to the Home Page </h1> -->
 
 </body>
 
