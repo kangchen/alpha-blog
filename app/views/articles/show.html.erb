@@ -4,7 +4,13 @@
 <p> Title: <%= @article.title %> </p>
 <p> Description: <%= @article.description %> </p>
 <!-- <hr> -->
-
-<%= link_to "Edit this articles listing", edit_article_path %> ||
-
-<%= link_to "Back to articles listing", articles_path %>
+<table>
+  <tr>
+    <td>
+      <%= button_to "Edit Article", edit_article_path, :method => :get, :class => 'form-button' %>
+    </td>
+    <td>
+      <%= button_to "List Articles", articles_path, :method => :get, :class => 'form-button' %>
+    </td>
+  </tr>
+</table>
