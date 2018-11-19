@@ -1,0 +1,51 @@
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+
+body {
+   background-color: white;
+}
+
+.navbar {
+  background-color: #f2835a;
+  font-family: inherit;
+  font-size: 1.2em;
+  word-spacing: 2px;
+  outline: none;
+}
+
+.nav-item {
+  text-decoration: none;
+  margin: 10px;
+
+}
+
+#logo {
+  float: left;
+  font-family:impact;
+  font-size: 1.5em;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #4d4848;
+  letter-spacing: 1px;
+  font-wight: bold;
+}
+
+.dropdown-item {
+  color: black;
+}
+
+.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+a {
+  text-decoration: none;
+  color: #345d8c;
+}
+
+.search:hover {
+  background-color: lightblue;
+}

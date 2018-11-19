@@ -5,13 +5,23 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
-    <%= yield %>
+    <!-- <div class="wrapper"></div> -->
+    <div class="main">
+      <div class="content">
+        <%= render 'layouts/navbar' %>
+
+        <div class="container">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
     <%= render 'layouts/messages' %>
+    <%= render 'layouts/footer' %>
+
   </body>
 </html>

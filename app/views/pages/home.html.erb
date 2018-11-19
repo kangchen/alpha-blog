@@ -1,9 +1,12 @@
+<body style="background-image: url(<%= asset_path 'background-2-blur.jpeg' %>); background-size:100% 100vh;">
 
-<body bgcolor="#c0c3e4">
-
-  <%= render 'layouts/header' %>
-
-
-   <!-- <h1 align="center" style="font-family: sans-serif"> Welcome to the Home Page </h1> -->
+  <div class="center">
+    <h1 id="home-id">
+      ALPHA BLOG
+    </h1>
+    <p align="center">
+      <%= link_to "Sign up now", "/", class: "btn btn-primary btn-xlarge" %>
+    </p>
+  </div>
 
 </body>
