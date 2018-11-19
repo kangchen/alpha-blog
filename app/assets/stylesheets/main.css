@@ -95,8 +95,8 @@ body {
   flex-direction: column;
 }
 .content {
-  /* flex: 1 0 auto; */
-  margin-top: auto
+  flex: 1 0 auto;
+  /* margin-top: auto */
 }
 .footer {
   flex-shrink: 0;
@@ -107,5 +107,5 @@ body {
   height: 60px;
   color: #9a9fa2;
   text-align: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
