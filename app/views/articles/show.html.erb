@@ -1,33 +1,37 @@
 <% content_for(:title, "#{@article.title}") %>
 
-  <div align="center">
-    <h2 class="header">
-      Showing selected article
-    </h2>
+  <div align="center" >
     <div class="center" style="margin:15px;text-align:left;">
+      <h2 class="header">
+        Showing selected article
+      </h2>
       <%= form_for @article do |a| %>
         <br>
         <p>
           <%= a.label :title %>
-          <%= a.text_field :title, disabled: 'true' %>
+          <%= a.text_field :title, size: "53", disabled: 'true' %>
         </p>
         <p>
           <%= a.label :description %> <br>
-          <%= a.text_area :description, size: "36x12", disabled: 'true' %>
+          <%= a.text_area :description, size: "56x10", disabled: 'true' %>
         </p>
       <% end %>
 
       <div align="center">
-        <table>
+        <table style="border: 0px;">
           <tr>
             <td>
-              <%= button_to "Edit Article", edit_article_path, :method => :get, :class => 'form-button' %>
+              <%= button_to "Edit Article", edit_article_path, class: "btn btn-primary", :method => :get %>
             </td>
             <td>
-              <%= button_to "List Articles", articles_path, :method => :get, :class => 'form-button' %>
+              <%= button_to "List Articles", articles_path, class: "btn btn-success", :method => :get %>
+            </td>
+            <td>
+              <%= button_to 'Delete', article_path(@article), class: "btn btn-danger", method: :delete, data: {confirm: 'Are you sure?'} %>
             </td>
           </tr>
         </table>
       </div>
+
     </div>
   </div>

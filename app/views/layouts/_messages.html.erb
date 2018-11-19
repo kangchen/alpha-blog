@@ -1,5 +1,16 @@
-<% flash.each do |name, msg| %>
-  <ul>
-    <li style="color:green; font-size: 20px"> <%= msg %> </li>
-  </ul>
-<% end %>
+<div>
+  <% flash.each do |name, msg| %>
+
+    <div id='notification' class="notificationWindow center" style="visibility:visible;">
+      <hr>
+      <p style="font-size: 18px; color:green"> <%= msg %> </p>
+      <!-- <div class="btn-group btn-group-xs" role="group" aria-label="..." style="position:relative; bottom:10px;"> -->
+      <hr>
+      <br><br>
+      <button type="button" class="btn btn-secondary" title="Close" onclick="closeit('notification');" style="position:relative; opacity:1; float:right; margin:5px;">
+        Close
+      </button>
+
+    </div>
+  <% end %>
+</div>

@@ -1,23 +1,56 @@
 
-<% if @article.errors.any? %>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li style="color:red"><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 <%= form_for @article do |a| %>
   <br>
+
   <p>
     <%= a.label :title %>
-    <%= a.text_field :title %>
+    <%= a.text_field :title, size: "53" %>
   </p>
   <p>
     <%= a.label :description %> <br>
-    <%= a.text_area :description, size: "36x10" %>
+    <%= a.text_area :description, size: "56x10" %>
   </p>
-    <%= a.submit "Submit", :class => 'form-button' %>
+  <table align="center">
+    <tr>
+      <td><%= button_to "Submit", articles_path, :method => 'post', class: 'btn btn-primary' %></td>
+      <td><%= button_to 'Cancel', articles_path, :method => :get, class: 'btn btn-success' %></td>
+    </tr>
+  </table>
 <% end %>
 <br>
-<%= button_to 'Cancel', articles_path, :method => :get, :class => 'form-button' %>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" data-backdrop="false" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><%= @article.title %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul>
+            <% @article.errors.full_messages.each do |msg| %>
+              <li style="color:red"><%= msg %></li>
+            <% end %>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="center">
+<% if @article.errors.any? %>
+  <script>
+      $(document).ready(function(){
+          $("#exampleModalCenter").modal('show');
+      });
+  </script>
+<% end %>
+</div>

@@ -1,22 +1,45 @@
 <% content_for(:title, "Article Lists") %>
-<div style="">
-  <h2 class="header"> Listing all articles </h2>
+<hr>
+  <div style="position: relative; top: 60px">
+    <h2 class="header">
+      Listing all articles
+    </h2> <br>
 
-  <table class="table table-bordered table-striped table-hover">
-    <tr>
-      <th> Title </th>
-      <th> Description </th>
-      <th> Posted Time </th>
-    </tr>
-    <% @articles.each do |article|  %>
-    <tr>
-      <td> <%= article.title %> </td>
-      <td> <%= article.description %> </td>
-      <td> <%= (article.created_at).strftime("%b %d %Y %T %P") %> </td>
-      <td> <%= link_to 'Edit', edit_article_path(article) %></td>
-      <td> <%= link_to 'Show', article_path(article) %></td>
-      <td> <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
-    </tr>
-    <% end %>
-  </table>
-</div>
+    <table class="table table-bordered table-striped table-hover">
+      <tr>
+        <th>
+          Title
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Posted Time
+        </th>
+      </tr>
+      <% @articles.each do |article|  %>
+        <tr style="cursor:pointer" id="<%= article.id %>" onclick="goto(<%= article.id %>)" >
+          <td width="25%">
+            <%= article.title %>
+          </td>
+          <td width="50%">
+            <% if article.description.length > 35 %>
+              <%= article.description[0, 32] %> ...
+            <% else %>
+              <%= article.description %>
+            <% end %>
+          </td>
+          <td width="25%">
+            <%= (article.created_at).strftime("%b %d %Y %T %P") %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <hr>
+
+  <script>
+    function goto(article) {
+      window.location.href = 'http://localhost:3000/articles/'+article
+    }
+  </script>
