@@ -1,16 +1,33 @@
 <% content_for(:title, "#{@article.title}") %>
-<h1> Showing selected article </h1>
 
-<p> Title: <%= @article.title %> </p>
-<p> Description: <%= @article.description %> </p>
-<!-- <hr> -->
-<table>
-  <tr>
-    <td>
-      <%= button_to "Edit Article", edit_article_path, :method => :get, :class => 'form-button' %>
-    </td>
-    <td>
-      <%= button_to "List Articles", articles_path, :method => :get, :class => 'form-button' %>
-    </td>
-  </tr>
-</table>
+  <div align="center">
+    <h2 class="header">
+      Showing selected article
+    </h2>
+    <div class="center" style="margin:15px;text-align:left;">
+      <%= form_for @article do |a| %>
+        <br>
+        <p>
+          <%= a.label :title %>
+          <%= a.text_field :title, disabled: 'true' %>
+        </p>
+        <p>
+          <%= a.label :description %> <br>
+          <%= a.text_area :description, size: "36x12", disabled: 'true' %>
+        </p>
+      <% end %>
+
+      <div align="center">
+        <table>
+          <tr>
+            <td>
+              <%= button_to "Edit Article", edit_article_path, :method => :get, :class => 'form-button' %>
+            </td>
+            <td>
+              <%= button_to "List Articles", articles_path, :method => :get, :class => 'form-button' %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>

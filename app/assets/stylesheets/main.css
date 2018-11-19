@@ -99,17 +99,15 @@ table, th, td {
   color: #0d60ac;
 }
 
-/* footer {
-  position: relative;
-  background-color: #777;
-  width: 100%;
-  font-size: 1em;
+.header {
+  font-weight: bold;
+  text-shadow: 1px 1px #333;
+  font-family: serif;
+  color: #0d60ac;
+  margin: 5px;
   text-align: center;
-  padding-top: 20px;
-  color: #ccc;
-  bottom: 0;
-
-} */
+  padding-top: 10px;
+}
 
 html, body {
   height: 100%;
