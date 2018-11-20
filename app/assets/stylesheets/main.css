@@ -87,6 +87,45 @@ table, th, td {
     height: 190px;
 }
 
+.form-container {
+  display: flex;
+  width: 225px;
+  /* align-items: flex-start; */
+  /* justify-content: space-around; */
+}
+
+.form-b1 {
+  flex: 1;
+}
+
+.form-b2 {
+  flex: 1;
+}
+
+.show-container {
+  display: flex;
+  width: 350px;
+  /* margin: 10px; */
+  /* align-items: flex-start; */
+  /* justify-content: space-between; */
+}
+
+.show-b1 {
+  flex: 1;
+  flex-basis: 30%
+}
+
+.show-b2 {
+  flex: 1;
+  flex-basis: 30%
+}
+
+.show-b3 {
+  flex: 1;
+  flex-basis: 20%
+}
+
+
 html, body {
   height: 100%;
 }
@@ -96,7 +135,6 @@ body {
 }
 .content {
   flex: 1 0 auto;
-  /* margin-top: auto */
 }
 .footer {
   flex-shrink: 0;
@@ -107,5 +145,4 @@ body {
   height: 60px;
   color: #9a9fa2;
   text-align: center;
-  /* margin-top: 50px; */
 }
