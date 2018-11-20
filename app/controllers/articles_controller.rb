@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
 # creating an article
   def new
+    @action = 'Create Article'
     @article = Article.new
   end
 
@@ -17,12 +18,14 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article was successfully created"
       redirect_to article_path(@article)
     else
+      @action = 'Create Article'
       render 'new'
     end
   end
 
 # updating an article
   def edit
+    @action="Update Article"
   end
 
   def update
@@ -30,6 +33,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article was successfully updated"
       redirect_to article_path(@article)
     else
+      @action = 'Update Article'
       render 'edit'
     end
   end
