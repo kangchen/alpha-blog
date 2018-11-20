@@ -14,7 +14,7 @@
           Description
         </th>
         <th>
-          Posted Time
+          DateTime
         </th>
       </tr>
       <% @articles.each do |article|  %>
@@ -30,7 +30,7 @@
             <% end %>
           </td>
           <td width="25%">
-            <%= (article.created_at).strftime("%b %d %Y %T %P") %>
+            <%= (article.updated_at).strftime("%b %d %Y %T %P") %>
           </td>
         </tr>
       <% end %>
