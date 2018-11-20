@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-15.times do
+7.times do
   Article.create({
     title: Faker::Book.title,
-    description: Faker::Lorem.sentence
+    description: Faker::Lorem.sentence,
+    user_id: 2
   })
 end

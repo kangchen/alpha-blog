@@ -65,6 +65,7 @@ end
 
 group :production do
   # gem 'mysql2'
+  gem 'faker'
   gem 'rails_12factor'
 end
 
