@@ -14,22 +14,26 @@
           Description
         </th>
         <th>
-          DateTime
+          Author
+        </th>
+        <th>
+          Last Updated
         </th>
       </tr>
       <% @articles.each do |article|  %>
         <tr style="cursor:pointer" id="<%= article.id %>" onclick="goto(<%= article.id %>)" >
-          <td width="25%">
+          <td width="20%">
             <%= article.title %>
           </td>
-          <td width="50%">
+          <td width="40%">
             <% if article.description.length > 35 %>
               <%= article.description[0, 32] %> ...
             <% else %>
               <%= article.description %>
             <% end %>
           </td>
-          <td width="25%">
+          <td width="20%"><%= article.user.username %></td>
+          <td width="20%">
             <%= (article.updated_at).strftime("%b %d %Y %T %P") %>
           </td>
         </tr>

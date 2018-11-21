@@ -21,7 +21,7 @@
 
         <div class="show-container">
           <div class="show-b1"><%= button_to "Edit Article", edit_article_path, class: "btn btn-primary", :method => :get %></div>
-          <div class="show-b2"><%= button_to "List Articles", articles_path, class: "btn btn-primary", :method => :get %></div>
+          <div class="show-b2"><%= button_to "List Articles", articles_path, class: "btn btn-success", :method => :get %></div>
           <div class="show-b3"><%= button_to 'Delete', article_path(@article), class: "btn btn-danger", method: :delete, data: {confirm: 'Are you sure?'} %></div>
         </div>
 

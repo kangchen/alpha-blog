@@ -2,8 +2,9 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def index
-    @articles = Article.find_by_sql("select * from kcorner.articles order by updated_at desc")
-    # @articles = Article.all # order by oldest
+    # @articles = Article.find_by_sql("select a.title, a.description, a.updated_at, a.id, u.username
+    #   from kcorner.articles as a,kcorner.users as u where a.user_id = u.id order by a.updated_at desc")
+    @articles = Article.all.order(:updated_at) # order by oldest
   end
 
 # creating an article

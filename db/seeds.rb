@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-7.times do
+5.times do
   Article.create({
     title: Faker::Book.title,
-    description: Faker::Lorem.sentence,
-    user_id: 2
+    description: Faker::Lorem.paragraphs(3, false),
+    user_id: rand(1..5)
   })
 end
