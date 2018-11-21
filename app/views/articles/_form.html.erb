@@ -1,56 +1,52 @@
 
-<%= form_for @article do |a| %>
-  <br>
+<div>
+  <%= form_for @article do |a| %>
+    <br>
 
-  <p>
-    <%= a.label :title %> <br>
-    <%= a.text_field :title, size: "56", autofocus: true %>
-  </p>
-  <p>
-    <%= a.label :description %> <br>
-    <%= a.text_area :description, size: "56x10" %>
-  </p>
-<div align="center">
-  <div class="form-container">
-    <div class="form-b1"><%= button_to  @action, articles_path, :method => 'post', class: 'btn btn-primary' %></div>
-    <div class="form-b2"><%= button_to 'Cancel', articles_path, :method => :get, class: 'btn btn-primary' %></div>
-  </div>
-</div>
-<% end %>
-<br>
-
-
-<!-- Modal -->
-<div class="modal fade" id="confirmBox" tabindex="-1" data-backdrop="false" role="dialog" aria-labelledby="confirmBoxTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Notification</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <ul>
-            <% @article.errors.full_messages.each do |msg| %>
-              <li style="color:red; font-weight:bold"><%= msg %></li>
-            <% end %>
-        </ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+    <p>
+      <%= a.label :title %> <br>
+      <%= a.text_field :title, size: "56", autofocus: true %>
+    </p>
+    <p>
+      <%= a.label :description %> <br>
+      <%= a.text_area :description, size: "56x5" %>
+    </p>
+  <div align="center">
+    <div class="form-container">
+      <div class="form-b1"><%= button_to  @action, articles_path, :method => 'post', class: 'btn btn-primary' %></div>
+      <div class="form-b2"><%= button_to 'Cancel', articles_path, :method => :get, class: 'btn btn-primary' %></div>
     </div>
   </div>
+  <% end %>
 </div>
+<!-- Modal -->
 
-
-<div>
 <% if @article.errors.count > 0 %>
-  <script>
-      $(document).ready(function(){
-          $("#confirmBox").modal('show');
-      });
-  </script>
-<% end %>
+<div id='notification' class=" parent notificationWindow center" style="visibility:visible">
+
+  <div class='item' style="height:auto;">
+    <h5 style="color:black; float:right; margin:10px">
+    <a onclick="closeit('notification')" style="cursor:pointer; font-family:verdana">x</a></h5>
+    <h5 style="color:black; float:left; margin:10px">Notification</h5><br><br>
+    <hr>
+  </div>
+
+  <div class='item' style="height:auto;text-align: left;">
+    <!-- <p style="font-weight:bold; font-size:1.2em; color:green"> -->
+      <ul>
+          <% @article.errors.full_messages.each do |msg| %>
+            <li style="font-size:1em; color:red;"><%= msg %></li>
+          <% end %>
+      </ul>
+    <!-- </p> -->
+  </div>
+
+  <div class='item' style="float:right; height: auto;">
+    <hr>
+    <button type="button" class="btn btn-md btn-secondary" title="Close" onclick="closeit('notification');" style="opacity:1; float:right; margin:10px;">
+      Close
+    </button>
+  </div>
+
 </div>
+<% end %>
