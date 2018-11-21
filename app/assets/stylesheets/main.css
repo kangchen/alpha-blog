@@ -73,25 +73,46 @@ table, th, td {
   padding-top: 10px;
 }
 
+/************************************************/
+
 .notificationWindow {
     position: fixed;
-    color: white;
+    color: black;
     opacity: 1;
     background: white;
     text-align: center;
-    box-shadow: 4px 4px 4px #ccc;
+    box-shadow: 6px 6px 4px #ccc;
     border: 1px solid #000000;
     /*bottom: 25%;*/
-    width:350px;
+    width:450px;
     /*width: 1122px;*/
-    height: 190px;
+    height: auto;
 }
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+
+}
+
+.item {
+  height: 100px;
+  /* width: 450px; */
+  margin: 5px;
+  color: white;
+  /* background: #5f729d; */
+  text-align: center;
+  /* line-height: 100px; */
+}
+
+/************************************************/
+
+
 
 .form-container {
   display: flex;
   width: 225px;
-  /* align-items: flex-start; */
-  /* justify-content: space-around; */
 }
 
 .form-b1 {
@@ -105,9 +126,6 @@ table, th, td {
 .show-container {
   display: flex;
   width: 350px;
-  /* margin: 10px; */
-  /* align-items: flex-start; */
-  /* justify-content: space-between; */
 }
 
 .show-b1 {

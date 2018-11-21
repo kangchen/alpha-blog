@@ -2,15 +2,27 @@
 
   <% flash.each do |name, msg| %>
 
-    <div id='notification' class="notificationWindow center" style="visibility:visible;">
-      <hr>
-      <p style="font-size: 18px; color:green"> <%= msg %> </p>
-      <!-- <div class="btn-group btn-group-xs" role="group" aria-label="..." style="position:relative; bottom:10px;"> -->
-      <hr>
-      <br><br>
-      <button type="button" class="btn btn-secondary" title="Close" onclick="closeit('notification');" style="position:relative; opacity:1; float:right; margin:5px;">
-        Close
-      </button>
+    <div id='notification' class=" parent notificationWindow center" style="visibility:visible">
+
+      <div class='item' style="height:auto;">
+        <h5 style="color:black; float:right; margin:10px">
+        <a onclick="closeit('notification')" style="cursor:pointer; font-family:verdana">x</a></h5>
+        <h5 style="color:black; float:left; margin:10px">Notification</h5><br><br>
+        <hr>
+      </div>
+
+      <div class='item' style="height:auto;">
+        <p style="font-weight:bold; font-size:1.2em; color:green">
+          <%= msg %>
+        </p>
+      </div>
+
+      <div class='item' style="float:right; height: auto;">
+        <hr>
+        <button type="button" class="btn btn-md btn-secondary" title="Close" onclick="closeit('notification');" style="opacity:1; float:right; margin:10px;">
+          Close
+        </button>
+      </div>
 
     </div>
   <% end %>

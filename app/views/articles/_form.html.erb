@@ -25,7 +25,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Title "<%= @article.title %>"</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Notification</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -33,7 +33,7 @@
       <div class="modal-body">
         <ul>
             <% @article.errors.full_messages.each do |msg| %>
-              <li style="color:red"><%= msg %></li>
+              <li style="color:red; font-weight:bold"><%= msg %></li>
             <% end %>
         </ul>
       </div>
@@ -45,7 +45,7 @@
 </div>
 
 
-<div class="center">
+<div>
 <% if @article.errors.count > 0 %>
   <script>
       $(document).ready(function(){

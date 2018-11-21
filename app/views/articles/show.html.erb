@@ -20,14 +20,48 @@
       <div align="center">
 
         <div class="show-container">
-          <div class="show-b1"><%= button_to "Edit Article", edit_article_path, class: "btn btn-primary", :method => :get %></div>
+          <div class="show-b1"><%= button_to "Edit Article",  edit_article_path, class: "btn btn-primary", :method => :get %></div>
           <div class="show-b2"><%= button_to "List Articles", articles_path, class: "btn btn-success", :method => :get %></div>
-          <div class="show-b3"><%= button_to 'Delete', article_path(@article), class: "btn btn-danger", method: :delete, data: {confirm: 'Are you sure?'} %></div>
+          <div class="show-b3"><button type="button" class="btn btn-danger" onclick="confirm()">Delete</button></div>
         </div>
 
       </div>
 
-
-
     </div>
   </div>
+
+
+
+  <!-- Modal -->
+<div class="modal fade center" id="confirmBox" tabindex="-1" data-backdrop="true" role="dialog" aria-labelledby="confirmBoxLabel" aria-hidden="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmBoxLabel">Delete Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <h4 align="center" style="font-weight:bold">Are you sure?</h4>
+      </div>
+
+      <!-- Delete button in the footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+        <%= link_to 'Delete', article_path(@article), method: :delete, class: 'btn btn-outline-danger' %>
+      </div>
+
+  </div>
+</div>
+</div>
+
+<script>
+  function confirm() {
+    $(document).ready(function(){
+        $("#confirmBox").modal('show');
+    });
+  }
+</script>
