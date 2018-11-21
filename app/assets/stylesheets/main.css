@@ -7,7 +7,7 @@ table, th, td {
   border: 1px solid black;
 }
 
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover {
   background-color: #b7c1c1;
   color: white;
 }
@@ -119,10 +119,6 @@ table, th, td {
   flex: 1;
 }
 
-.form-b2 {
-  flex: 1;
-}
-
 .show-container {
   display: flex;
   width: 350px;
@@ -162,8 +158,14 @@ body {
   background-color: #4c5050;
   height: 60px;
   color: #9a9fa2;
-  text-align: center;
+  text-align: left;
+  margin: auto;
 }
 
-
 /*******************************************/
+
+.form-format {
+  font-size: 24px;
+  font-weight: bold;
+
+}

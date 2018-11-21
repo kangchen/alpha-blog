@@ -9,8 +9,8 @@ class ArticlesController < ApplicationController
 
 # creating an article
   def new
-    @action = 'Create Article'
     @article = Article.new
+    @action = 'Create Article'
   end
 
   def create
