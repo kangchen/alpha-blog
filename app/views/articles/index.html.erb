@@ -1,57 +1,24 @@
 <% content_for(:title, "Article Lists") %>
-<hr>
 
+  <hr>
   <div style="position: relative;">
     <h2 class="header">
       LISTING ALL ARTICLES
     </h2>
 
+    <hr>
+    <%# will_paginate @articles %>
 
-    <%= will_paginate @articles %>
+    <%= render 'articles/index' %>
+    <%= render 'shared/paging' %>
 
-    <table class="table table-bordered table-striped table-hover">
-      <tr>
-        <th>
-          Title
-        </th>
-        <th>
-          Description
-        </th>
-        <th>
-          Author
-        </th>
-        <th>
-          Last Updated
-        </th>
-      </tr>
-      <% @articles.each do |article|  %>
-        <tr style="cursor:pointer" id="<%= article.id %>" onclick="goto(<%= article.id %>)" >
-          <td width="20%">
-            <%= article.title %>
-          </td>
-          <td width="40%">
-            <% if article.description.length > 35 %>
-              <%= article.description[0, 32] %> ...more
-            <% else %>
-              <%= article.description %>
-            <% end %>
-          </td>
-          <td width="20%"><%= article.user.username %></td>
-          <td width="20%">
-            <%= (article.updated_at).strftime("%b %d %Y %T %P") %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
+    <%# will_paginate @articles %>
+
   </div>
-
-<div align="center"><%= will_paginate @articles %></div>
-
-
   <hr>
 
   <script>
     function goto(id) {
-      window.location.href = 'http://54.203.188.228/articles/'+id
+      window.location.href = 'http://localhost:3000/articles/' + id
     }
   </script>

@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
     #   from kcorner.articles as a,kcorner.users as u where a.user_id = u.id order by a.updated_at desc")
     # @articles = Article.all.order('updated_at DESC') # order by oldest
     # @articles = Article.paginate(page: params[:page], per_page: 10)
-    @articles = Article.paginate(page: params[:page], :per_page => 15).order('updated_at DESC')
+    @articles = Article.paginate(page: params[:page], :per_page => PER_PAGE).order('updated_at DESC')
   end
 
 # creating an article
