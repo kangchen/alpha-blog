@@ -8,6 +8,10 @@ gem 'rails', '~> 5.2.1'
 
 gem 'mysql2'
 
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'bootstrap-will_paginate', '~> 1.0'
+
+
 # gem 'bcrypt', '~> 3.1.7'
 # Use Puma as the app server
 # gem 'puma', '~> 3.11'
@@ -49,7 +53,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  # gem 'web-console', '>= 3.3.0'
   gem 'faker'
   # gem 'byebug'
   gem 'listen', '>= 3.0.5', '< 3.2'

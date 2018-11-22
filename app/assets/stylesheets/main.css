@@ -169,3 +169,12 @@ body {
   font-weight: bold;
 
 }
+
+.circle {
+  border-radius:50%;
+}
+
+/* .circle img:hover {
+    border-radius: 0%;
+    border: 5px solid #2a648f;
+} */

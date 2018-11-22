@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
   end
@@ -9,8 +14,12 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to the Alpha Blog #{@user.username}"
       redirect_to articles_path
     else
-      render 'new'
+      render 'edit'
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private

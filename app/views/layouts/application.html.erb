@@ -11,15 +11,18 @@
 
   <body>
     <!-- <div class="wrapper"></div> -->
-<hr>
+  <hr>
+
       <div class="content">
+        <hr>
         <%= render 'layouts/navbar' %>
         <div class="container">
           <%= yield %>
         </div>
 
       </div>
-    <%= render 'layouts/messages' %> 
+
+    <%= render 'layouts/messages' %>
     <%# <%= debug(params) if Rails.env.development? %>
     <%= render 'layouts/footer' %>
   </body>
