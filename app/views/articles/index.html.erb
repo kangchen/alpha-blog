@@ -7,18 +7,19 @@
     </h2>
 
     <hr>
-    <%# will_paginate @articles %>
+    <% will_paginate @articles %>
 
+    <small style="float:right; font-weight:bold"><%= @articles.current_page %> / <%= @articles.total_pages %></small>
     <%= render 'articles/index' %>
     <%= render 'shared/paging' %>
 
-    <%# will_paginate @articles %>
+    <% will_paginate @articles %>
 
   </div>
   <hr>
 
   <script>
     function goto(id) {
-      window.location.href = 'http://localhost:3000/articles/' + id
+      window.location.href = 'http://<%= IPADDRESS %>/articles/' + id
     }
   </script>

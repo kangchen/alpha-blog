@@ -1,11 +1,13 @@
 <div class="page-right">
-    <a class="right carousel-control fixed-section" href="http://localhost:3000/articles?page=<%=(@articles.current_page == @articles.total_pages ? 1 : @articles.current_page + 1) %>" role="button">
-        <span class="glyphicon glyphicon-chevron-right paging"><%= image_tag('arrow_forward.png')%></span>
+    <a class="paging" href="http://<%= IPADDRESS %>/articles?page=<%=(@articles.current_page == @articles.total_pages ? 1 : @articles.current_page + 1) %>" role="button">
+        <%# icon('fas', 'chevron-right', class: 'paging') %>
+        <i class="fas fa-chevron-right paging"></i>
     </a>
 </div>
 
 <div class="page-left">
-    <a class="left carousel-control fixed-section" href="http://localhost:3000/articles?page=<%=(@articles.current_page < 2 ?  @articles.total_pages : @articles.current_page - 1) %>"  role="button">
-        <span class="glyphicon glyphicon-chevron-left paging"><%= image_tag('arrow_back.png')%></span>
+    <a class="paging" href="http://<%= IPADDRESS %>/articles?page=<%=(@articles.current_page < 2 ?  @articles.total_pages : @articles.current_page - 1) %>"  role="button">
+        <%# icon('fas', 'chevron-left', class: 'paging') %>
+        <i class="fas fa-chevron-left paging"></i>
     </a>
 </div>
