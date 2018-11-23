@@ -14,7 +14,9 @@
         <p>
           <%= a.label :description %> <br>
           <%= a.text_area :description, size: "56x6", disabled: 'true' %><br>
-        <small>Created by <%= @article.user.username %>, last updated: <%= @article.updated_at.strftime("%b %d %Y %T %P") %></small>
+        <small>Created by
+          <%= link_to  @article.user.username, user_path(@article.user.id) %>
+           last updated: <%= @article.updated_at.strftime("%b %d %Y %T %P") %></small>
         </p>
 
       <% end %>
