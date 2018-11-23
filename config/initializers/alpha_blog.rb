@@ -1,2 +1,2 @@
 PER_PAGE = 10
-IPADDRESS = '34.217.192.116'
+IPADDRESS = 'request.remote_ip'
