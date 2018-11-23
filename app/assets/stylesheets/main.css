@@ -201,3 +201,29 @@ body {
 .paging:hover {
     color: #f2835a;
 }
+
+.user-card {
+  /* background-color: #f9875b; */
+  /* width: 235px; */
+  /* height: 245px; */
+  /* box-shadow: 4px 4px #5e5a5a; */
+  margin: 10px;
+}
+
+.card {
+  background-color: #f9875b;
+  /* width: 240px; */
+  /* height: 245px; */
+  padding: 3px;
+    box-shadow: 4px 4px #5e5a5a;
+}
+
+.card-body {
+  background-color: #d8e5eb;
+  width: 210px;
+  height: 240px;
+}
+
+.card-title {
+  font-size: 18px;
+}

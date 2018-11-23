@@ -1,12 +1,12 @@
 <div class="page-right">
-    <a class="paging" href="http://<%= IPADDRESS %>/articles?page=<%=(@articles.current_page == @articles.total_pages ? 1 : @articles.current_page + 1) %>" role="button">
+    <a class="paging" href="http://<%= IPADDRESS %><%=request.env['PATH_INFO']%>?page=<%=(obj.current_page == obj.total_pages ? 1 : obj.current_page + 1) %>" role="button">
         <%# icon('fas', 'chevron-right', class: 'paging') %>
         <i class="fas fa-chevron-right paging"></i>
     </a>
 </div>
 
 <div class="page-left">
-    <a class="paging" href="http://<%= IPADDRESS %>/articles?page=<%=(@articles.current_page < 2 ?  @articles.total_pages : @articles.current_page - 1) %>"  role="button">
+    <a class="paging" href="http://<%= IPADDRESS %><%=request.env['PATH_INFO']%>?page=<%=(obj.current_page < 2 ?  obj.total_pages : obj.current_page - 1) %>"  role="button">
         <%# icon('fas', 'chevron-left', class: 'paging') %>
         <i class="fas fa-chevron-left paging"></i>
     </a>
