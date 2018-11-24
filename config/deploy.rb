@@ -9,7 +9,7 @@ set :repo_url, "git@github.com:kangchen/alpha-blog.git"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/kangchen/Sites/alpha-blog/'
+set :deploy_to, '/home/ubuntu/Sites/alpha-blog/'
 
 set :linked_files, %w{config/master.key}
 
