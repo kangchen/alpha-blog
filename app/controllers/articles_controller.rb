@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     # @article.user = User.find(rand(1..7))
-    # @article.user = current_user
+    @article.user = current_user
     if @article.save
       # @message_color = 'green'
       flash[:success] = "Article was successfully created"
