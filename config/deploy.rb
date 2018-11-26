@@ -11,8 +11,6 @@ set :repo_url, "git@github.com:kangchen/alpha-blog.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/ubuntu/Sites/alpha-blog/'
 
-set :linked_files, %w{config/master.key}
-
 # set :rvm_type, :user
 # set :rvm_ruby_version, '2.5.3'
 
@@ -27,6 +25,8 @@ set :format_options, command_output: true, log_file: "log/capistrano.log", color
 # set :pty, true
 
 # Default value for :linked_files is []
+set :linked_files, %w{config/master.key}
+
 append :linked_files, "config/database.yml"
 
 # Default value for linked_dirs is []
