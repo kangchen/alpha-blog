@@ -44,5 +44,21 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
+set :passenger_restart_with_sudo, true
+
 set :passenger_restart_options,
   -> { "#{deploy_to} --ignore-app-not-running --rolling-restart" }
+
+
+namespace :deploy do
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
+
+  after :publishing, 'deploy:restart'
+  after :finishing, 'deploy:cleanup'
+end
