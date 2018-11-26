@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :show, :destroy]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     # @articles = Article.find_by_sql("select a.title, a.description, a.updated_at, a.id, u.username
@@ -17,9 +19,11 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user = User.find(rand(1..7))
+    # @article.user = User.find(rand(1..7))
+    # @article.user = current_user
     if @article.save
-      flash[:notice] = "Article was successfully created"
+      # @message_color = 'green'
+      flash[:success] = "Article was successfully created"
       redirect_to article_path(@article)
     else
       @action = 'Create Article'
@@ -34,6 +38,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
+      # @message_color = 'green'
       flash[:notice] = "Article was successfully updated"
       redirect_to article_path(@article)
     else
@@ -45,6 +50,7 @@ class ArticlesController < ApplicationController
 # deleting an article
   def destroy
     @article.destroy
+    # @essage_color  = "green"
     flash[:notice] = "Article was successfully deleted"
     redirect_to articles_path
   end
@@ -62,4 +68,11 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :description)
   end
 
+  def require_same_user
+    if current_user != @article.user
+      # @message_color = "red"
+      flash[:danger] = "You can only edit or delete your own articles"
+      redirect_to article_path
+    end
+  end
 end
