@@ -40,29 +40,6 @@ table, th, td {
   font-family: impact;
 }
 
-#menu {
-  position: relative;
-  left: 10px;
-  font-family: sans-serif;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: white;
-  /* text-shadow: 2px, 2px, #ccc; */
-  outline: none;
-}
-
-#menu:hover {
-  color: #0d60ac;
-  /* text-shadow: 0px, 0px, #ccc; */
-}
-
-/* #menu:not(:hover) {
-     color: white;
- } */
-#menu:focus {
-  color: #0d60ac;
-}
-
 .header {
   font-weight: bold;
   text-shadow: 1px 1px #333;
@@ -202,28 +179,39 @@ body {
     color: #f2835a;
 }
 
-.user-card {
-  /* background-color: #f9875b; */
-  /* width: 235px; */
+.article-card {
+  background-color: #d8e5eb;
+  /* width: 240px; */
   /* height: 245px; */
-  /* box-shadow: 4px 4px #5e5a5a; */
-  margin: 10px;
+  padding: 3px;
+  box-shadow: 4px 4px #5e5a5a;
+}
+
+.article-card-body {
+  background-color: #d8e5eb;
+  width: 310px;
+  height: 250px;
 }
 
 .card {
+  margin: 10px;
+}
+
+.user-card {
   background-color: #f9875b;
   /* width: 240px; */
   /* height: 245px; */
   padding: 3px;
-    box-shadow: 4px 4px #5e5a5a;
+  box-shadow: 4px 4px #5e5a5a;
 }
 
-.card-body {
+
+.user-card-body {
   background-color: #d8e5eb;
   width: 210px;
   height: 240px;
 }
 
 .card-title {
-  font-size: 18px;
+  font-size: 14px;
 }

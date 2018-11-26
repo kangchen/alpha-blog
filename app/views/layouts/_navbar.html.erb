@@ -34,6 +34,14 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn search" type="submit">Search</button>
       </form>
+      <div class="nav-item">
+        <% if logged_in? %>
+          <%= link_to 'Log out', logout_path, method: :delete, id: 'menu' %>
+        <% else %>
+          <%= link_to 'Log in', login_path, id: 'menu' %>
+          <%= link_to 'Sign up', signup_path, id: 'menu' %>
+        <% end %>
+      </div>
     </div>
   </nav>
 </div>

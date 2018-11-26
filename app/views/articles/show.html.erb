@@ -15,7 +15,7 @@
           <%= a.label :description %> <br>
           <%= a.text_area :description, size: "56x6", disabled: 'true' %><br>
         <small>Created by
-          <%= link_to  @article.user.username, user_path(@article.user.id) %>
+           <%= link_to  @article.user.username, user_path(@article.user.id) %>
            last updated: <%= @article.updated_at.strftime("%b %d %Y %T %P") %></small>
         </p>
 
@@ -51,7 +51,6 @@
         <h4 align="center" style="font-weight:bold">Are you sure?</h4>
       </div>
 
-      <!-- Delete button in the footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
         <%= link_to 'Delete', article_path(@article), method: :delete, class: 'btn btn-outline-danger' %>

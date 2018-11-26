@@ -8,3 +8,24 @@
   <h4 align="center"> <%= @user.username %>'s articles </h4>
 </div>
 </div>
+
+<div  class="container">
+  <div class="row">
+    <!-- <div class="col" style="width:250px"> -->
+      <% @user.articles.each do | a | %>
+      <a href="http://<%= IPADDRESS %>/articles/<%= a.id %>" style="text-decoration:none">
+        <div class="card-deck card">
+          <div align="center" class="article-card">
+            <div class="article-card-body">
+              <h5 class="card-title">
+                <%= a.title.upcase %></h5>
+                <hr>
+                <%= a.description %>
+            </div>
+          </div>
+        </div>
+        </a>
+      <% end %>
+    <!-- </div> -->
+  </div>
+</div>

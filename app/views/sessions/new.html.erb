@@ -1,0 +1,40 @@
+
+<div class="center">
+  <div class="">
+
+    <h2 class="header" style="margin:15px;text-align:left;">
+      ALPHA BLOG SIGNIN
+    </h2>
+    <br>
+      <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
+
+      <div class="form-group">
+        <div class="control-label col-sm-2 form-format">
+          <%= f.label :email %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.email_field :email, class: "form-control", size: 80, placeholder: "Enter email", autofocus: true %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="control-label col-sm-2 form-format">
+          <%= f.label :password %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
+        </div>
+      </div>
+
+      <div class="form-group form-container">
+        <div class="col-sm-offset-2 col-sm-10 form-b1">
+          <%= f.submit 'Log in', class: 'btn btn-primary' %>
+        </div>
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="form-b1"><%= link_to 'Cancel', articles_path, class: 'btn btn-primary' %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

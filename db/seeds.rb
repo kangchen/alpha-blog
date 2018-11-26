@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# seed for development: rake db:seed
+# seed for production: rake db:seed RAILS_ENV=production
 
 20.times do
   Article.create({
