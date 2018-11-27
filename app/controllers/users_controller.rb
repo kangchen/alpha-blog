@@ -19,6 +19,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.new
+  end
+
+  def update
+    if @user.update(user_params)
+      # @message_color = 'green'
+      flash[:notice] = "User profile was successfully updated"
+      redirect_to user_path(@user)
+    else
+      # @action = 'Update Article'
+      # render 'edit'
+    end
+  end
+
   def show
     @user = User.find(params[:id])
   end

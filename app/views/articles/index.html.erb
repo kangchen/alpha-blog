@@ -9,7 +9,9 @@
     <hr>
     <% will_paginate @articles %>
 
-    <small style="float:right; font-weight:bold"><%= @articles.current_page %> / <%= @articles.total_pages %></small>
+    <small style="float:right; font-weight:bold">
+      <%= @articles.current_page %> / <%= @articles.total_pages %>
+    </small>
     <%= render 'articles/index' %>
 
     <% will_paginate @articles %>
