@@ -8,10 +8,10 @@
 # seed for development: rake db:seed
 # seed for production: rake db:seed RAILS_ENV=production
 
-20.times do
+10.times do
   Article.create({
     title: Faker::Book.title,
     description: Faker::Lorem.paragraphs(3, false),
-    user_id: rand(1..7)
+    user_id: rand(1..8)
   })
 end

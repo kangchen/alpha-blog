@@ -52,7 +52,8 @@ class ArticlesController < ApplicationController
     @article.destroy
     # @essage_color  = "green"
     flash[:notice] = "Article was successfully deleted"
-    redirect_to articles_path
+    redirect_to user_path(current_user)
+    # render 'edit'
   end
 
   def show
