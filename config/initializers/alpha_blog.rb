@@ -1,2 +1,2 @@
 PER_PAGE = 10
-IPADDRESS = 'localhost:3000'
+IPADDRESS = '104.41.130.69'
