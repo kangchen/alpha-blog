@@ -3,23 +3,26 @@
 <div>
 
   <%= form_for @article do |a| %>
-    <br>
+  <br>
 
-    <p>
-      <%= a.label :title %> <br>
-      <%= a.text_field :title, size: "50", autofocus: true %>
-    </p>
-    <p>
-      <%= a.label :description %> <br>
-      <%= a.text_area :description, size: "50x5" %>
-    </p>
+  <p>
+    <%= a.label :title %>
+    <br>
+    <%= a.text_field :title, size: "50", autofocus: true %>
+  </p>
+  <p>
+    <%= a.label :description %>
+    <br>
+    <%= a.text_area :description, size: "50x5" %>
+  </p>
   <div align="center">
     <div class="form-container">
-      <div class="form-b1"><%= button_to  @action, articles_path, :method => 'post', class: 'btn btn-primary' %></div>
-      <div class="form-b1"><%= button_to 'Cancel', articles_path, :method => :get, title: 'Cancel and returning to the Listing Articles', class: 'btn btn-primary' %></div>
+      <div class="form-b1"><%= button_to @action, articles_path, :method => 'post', class: 'btn btn-primary btn-md' %>
+      </div>
+      <div class="form-b1"><%= button_to 'Cancel', articles_path, :method => :get, title: 'Cancel and returning to the Listing Articles', class: 'btn btn-primary btn-md' %></div>
     </div>
   </div>
-  <% end %>
+<% end %>
 
 </div>
 
