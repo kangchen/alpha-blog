@@ -24,6 +24,10 @@ class UsersController < ApplicationController
 
   def edit
     # @user = User.new
+    if current_user != @user
+      flash[:danger] = "You can only edit your own profile"
+      redirect_to root_path
+    end
   end
 
   def update
