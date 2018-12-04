@@ -40,7 +40,7 @@
         <% if logged_in? %>
         <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= current_user.username %> Profile
+            <%= current_user.username %> <%=  "Admin" if current_user.admin? %>
           </a>
           <div class="dropdown-menu">
             <!-- <a class="dropdown-item" href="#">Action</a> -->

@@ -1,0 +1,35 @@
+<!-- Modal -->
+<div class="modal fade center" id="confirmBox" tabindex="-1" data-backdrop="true" role="dialog" aria-labelledby="confirmBoxLabel" aria-hidden="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmBoxLabel">Delete Confirmation</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+        <%= link_to 'X', users_path, method: :get, :style=>'text-decoration: none; font-weight:bold; color:black' %>
+      </div>
+
+      <div class="modal-body">
+
+        <h4 align="center" style="font-weight:bold; color:red">Are you sure you want to delete the user '<%= params[:name].upcase %>' and all their articles?</h4>
+
+      </div>
+
+      <div class="modal-footer">
+        <%= link_to 'Cancel', users_path, method: :get, class: 'btn btn-outline-primary' %>
+        <%= link_to 'Delete', user_path(id: params[:uid]), method: :delete, class: 'btn btn-outline-danger' %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+      $("#confirmBox").modal('show');
+    });
+
+</script>

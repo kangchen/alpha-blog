@@ -15,7 +15,7 @@
 
       <%# <% end %>
 
-        <% if logged_in? && @article.user == current_user %>
+        <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
           <div align="center">
 
             <div class="show-container">

@@ -10,13 +10,11 @@
   </div>
 
   <div class='item' style="height:auto;text-align: left;">
-    <!-- <p style="font-weight:bold; font-size:1.2em; color:green"> -->
       <ul>
           <% obj.errors.full_messages.each do |msg| %>
             <li style="font-size:1em; color:red;"><%= msg %></li>
           <% end %>
       </ul>
-    <!-- </p> -->
   </div>
 
   <div class='item' style="float:right; height: auto;">

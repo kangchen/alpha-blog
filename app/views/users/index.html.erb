@@ -5,7 +5,7 @@
     ALL ALPHA BLOGGERS
   </h2>
   <hr>
-  <div  class="container">
+  <div class="container">
     <div class="row">
       <!-- <div class="col" style="width:250px"> -->
         <% @users.each do |user| %>
@@ -18,6 +18,9 @@
                 <hr>
                 <small>
                   <%= pluralize(user.articles.count, "article") if user.articles %>
+                  <% if logged_in? and current_user.admin? %>  <br>
+                  <%= button_to "Delete this user", confirm_path(uid: user.id, name: user.username), class: "btn btn-danger", :method => :post %>
+                  <% end %>
                 </small>
               </div>
             </div>
