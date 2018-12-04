@@ -4,7 +4,16 @@
   <h2 class="header">
     ALL ALPHA BLOGGERS
   </h2>
+
   <hr>
+  <% will_paginate @users %>
+
+  <small style="float:right; font-weight:bold">
+    <%= @users.current_page %> / <%= @users.total_pages %>
+  </small>
+
+  <% will_paginate @users %>
+
   <div class="container">
     <div class="row">
       <!-- <div class="col" style="width:250px"> -->
