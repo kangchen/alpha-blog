@@ -8,10 +8,19 @@
 # seed for development: rake db:seed
 # seed for production: rake db:seed RAILS_ENV=production
 
-10.times do
+20.times do
   Article.create({
     title: Faker::Book.title,
     description: Faker::Lorem.paragraphs(3, false),
-    user_id: rand(1..8)
+    user_id: rand(18..24)
   })
 end
+
+# 7.times do
+#   User.create({
+#     username: Faker::Name.first_name,
+#     email: Faker::Internet.email,
+#     password: Faker::Internet.password(8),
+#     admin: 0
+#   })
+# end
