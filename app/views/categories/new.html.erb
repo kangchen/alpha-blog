@@ -1,27 +1,30 @@
-<h2 align="center">Create new category</h2>
+<hr>
+<h2 align="center" class="header">CREATE NEW CATEGORY</h2>
 
 <%= render 'shared/errors', obj: @category %>
 <hr>
-<div>
+<div align="center">
   <%= form_for(@category, :html => {class: "form-horizontal", role: "form"}) do  |a| %>
     <div class="form-group">
-      <div class="control-label col-sm-2">
-        <%= a.label :name %>
-      </div>
-
-      <div class="col-sm-8">
-        <%= a.text_field :name, class: "form-control", placeholder: "Category name", autofocus: true %>
-      </div>
+      <!-- <div class="row"> -->
+        <div align="left" class="col-sm-8">
+          <%= a.label :name %>
+        </div>
+        <div class="col-sm-8">
+          <%= a.text_field :name, class: "form-control", placeholder: "Category name", autofocus: true %>
+        </div>
+      <!-- </div> -->
     </div>
 
     <div class="form-group">
-      <span class="col-sm-offset-2 col-sm-6">
-        <%= a.submit class: 'btn btn-primary btn-lg' %>
-      </span>
-      <span class="col-sm-offset-2 col-sm-6">
-        <%= button_to 'Cancel', articles_path, :method => :get, title: 'Cancel and returning to the Listing Articles', class: 'btn btn-primary btn-lg' %>
-      </span>
-
+      <!-- <div class="row"> -->
+        <span style="margin:10px">
+          <%= a.submit class: 'btn btn-primary btn-lg' %>
+        </span>
+        <span>
+          <%= link_to 'Cancel', categories_path, :method => :get, class: 'btn btn-primary btn-lg' %>
+        </span>
+      </div>
     </div>
   <% end %>
 </div>

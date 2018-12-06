@@ -39,7 +39,6 @@ class ArticlesController < ApplicationController
   def update
     if logged_in? and current_user == @article.user
       if @article.update(article_params)
-        # @message_color = 'green'
         flash[:notice] = "Article was successfully updated"
         redirect_to article_path(@article)
       end
