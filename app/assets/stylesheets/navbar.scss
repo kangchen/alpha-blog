@@ -18,12 +18,13 @@ body {
 }
 
 .navbar {
-  min-height: 50px;
-  max-height: 60px;
+  // min-height: 48px;
+  max-height: 48px;
   background-color: #f2835a;
   font-family: inherit;
   font-size: 1em;
   word-spacing: 1px;
+  box-shadow: 2px 2px 1px #aaa;
   outline: none;
 }
 

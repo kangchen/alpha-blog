@@ -12,6 +12,7 @@
     <small style="float:right; font-weight:bold">
       <%= @articles.current_page %> / <%= @articles.total_pages %>
     </small>
+
     <%= render 'articles/index' %>
 
     <% will_paginate @articles %>

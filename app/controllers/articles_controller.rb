@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
     # @articles = Article.all.order('updated_at DESC') # order by oldest
     # @articles = Article.paginate(page: params[:page], per_page: 10)
     @articles = Article.paginate(page: params[:page], :per_page => PER_PAGE).order('updated_at DESC')
+    # sleep 0.01
   end
 
 # creating an article
@@ -59,6 +60,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    # sleep 0.5
   end
 
   private
