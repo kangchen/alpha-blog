@@ -12,11 +12,10 @@
   <div class='item' style="height:auto;text-align: left;">
       <ul>
           <% obj.errors.full_messages.each do |msg| %>
-            <li style="font-size:1em; color:red;"><%= msg %></li>
+            <li class="error" style="font-size:1em; color:red;"><%= msg %></li>
           <% end %>
       </ul>
   </div>
-
   <div class='item' style="float:right; height: auto;">
     <hr>
     <button type="button" class="btn btn-md btn-secondary" title="Close" onclick="closeit('notification');" style="opacity:1; float:right; margin:10px;">

@@ -1,2 +1,3 @@
 PER_PAGE = 12
+# IPADDRESS = 'localhost:3000'
 IPADDRESS = '104.41.130.69'

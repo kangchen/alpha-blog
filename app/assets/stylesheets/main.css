@@ -221,3 +221,8 @@ body {
   width: 210px;
   height: 240px;
 }
+
+.error {
+  font-size:1em;
+  color:red;
+}

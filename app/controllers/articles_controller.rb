@@ -37,13 +37,16 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    if @article.update(article_params)
-      # @message_color = 'green'
-      flash[:notice] = "Article was successfully updated"
-      redirect_to article_path(@article)
+    if logged_in? and current_user == @article.user
+      if @article.update(article_params)
+        # @message_color = 'green'
+        flash[:notice] = "Article was successfully updated"
+        redirect_to article_path(@article)
+      end
     else
       @action = 'Update Article'
-      render 'edit'
+      flash[:danger] = "Only user #{@article.user.username} can update this article"
+      redirect_to article_path
     end
   end
 
@@ -76,4 +79,5 @@ class ArticlesController < ApplicationController
       redirect_to article_path
     end
   end
+
 end
