@@ -38,12 +38,14 @@
             <%= link_to "All Categories", categories_path, class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
             <% Category.all.each do |category| %>
-              <div align="center" class="dropdown-item" style="text-decoration:none"><%= link_to "#{category.name}", category_path(category) %></div>
+              <!-- <div> -->
+                <%= link_to "#{category.name}", category_path(category), class: "dropdown-item", :style => "text-decoration:none"%>
+              <!-- </div> -->
             <% end %>
             <% if logged_in? and current_user.admin? %>
               <div class="divider" role="separator"></div>
               <div class="dropdown-divider"></div>
-              <div align="center" class="dropdown-item"><%= link_to "Create A Category", new_category_path %></div>
+              <%= link_to "Create A Category", new_category_path, class: "dropdown-item", :style => "text-decoration:none" %>
             <% end %>
             <div class="dropdown-divider"></div>
           </div>

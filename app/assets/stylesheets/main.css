@@ -232,6 +232,12 @@ body {
 .dropdown:hover>.dropdown-menu {
    display: inline;
    box-shadow: 4px 4px 2px #aaa;
-   background-color: #f6daca;
+   background-color: #e9ecf2;
    margin: 3px;
+}
+
+.dropdown-menu > a:hover {
+   color: #262626;
+   text-decoration: none;
+   background-color: #f6daca;
 }
