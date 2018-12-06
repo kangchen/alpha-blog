@@ -9,7 +9,8 @@ class ArticlesController < ApplicationController
     # @articles = Article.all.order('updated_at DESC') # order by oldest
     # @articles = Article.paginate(page: params[:page], per_page: 10)
     @articles = Article.paginate(page: params[:page], :per_page => PER_PAGE).order('updated_at DESC')
-    # sleep 0.01
+    expires_in 3.minutes, :public => true
+    # expires_now
   end
 
 # creating an article
