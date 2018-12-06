@@ -8,8 +8,10 @@ table, th, td {
 }
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover {
-  background-color: #b7c1c1;
-  color: white;
+  background-color: #f6daca;
+  color: #0d60ac;
+  font-weight: bold;
+  font-size: 15px;
 }
 
 .form-button {
@@ -225,4 +227,11 @@ body {
 .error {
   font-size:1em;
   color:red;
+}
+
+.dropdown:hover>.dropdown-menu {
+   display: inline;
+   box-shadow: 4px 4px 2px #aaa;
+   background-color: #f6daca;
+   margin: 3px;
 }
