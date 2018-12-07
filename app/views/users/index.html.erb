@@ -1,6 +1,6 @@
 <%= render 'shared/paging', obj: @users %>
 
-<div style="position: relative;">
+<!-- <div style="position: relative;"> -->
   <hr>
   <h2 class="header">
     ALL ALPHA BLOGGERS
@@ -15,16 +15,20 @@
 
   <% will_paginate @users %>
 
-  <div class="container">
+  <div class="parent">
     <div class="row">
       <!-- <div class="col" style="width:250px"> -->
         <% @users.each do |user| %>
-          <div class="card-deck card">
-            <div align="center" class="user-card">
+          <!-- <hr> -->
+          <div class="card-deck card col-sm-2">
+            <div class="user-card">
               <div class="user-card-body">
                 <h3 class="card-title">
-                  <%= link_to user.username.upcase, user_path(user) %></h3>
-                  <%= link_to gravatar_for(user), user_path(user) %>
+                  <!-- <hr> -->
+                  <br>
+                  <%= link_to user.username.upcase, user_path(user) %>
+                </h3>
+                <%= link_to gravatar_for(user), user_path(user) %>
                 <hr>
                 <small>
                   <%= pluralize(user.articles.count, "article") if user.articles %>
@@ -35,8 +39,9 @@
               </div>
             </div>
           </div>
+
         <% end %>
       <!-- </div> -->
     </div>
   </div>
-</div>
+<!-- </div> -->
