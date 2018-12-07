@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
     # @articles = Article.all.order('updated_at DESC') # order by oldest
     # @articles = Article.paginate(page: params[:page], per_page: 10)
     @articles = Article.paginate(page: params[:page], :per_page => PER_PAGE).order('updated_at DESC')
-    expires_in 3.minutes, :public => true
+    # expires_in 3.minutes, :public => true
     # expires_now
   end
 
@@ -21,10 +21,8 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    # @article.user = User.find(rand(1..7))
     @article.user = current_user
     if @article.save
-      # @message_color = 'green'
       flash[:success] = "Article was successfully created"
       redirect_to article_path(@article)
     else
@@ -39,15 +37,13 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    if logged_in? and current_user == @article.user
-      if @article.update(article_params)
-        flash[:notice] = "Article was successfully updated"
-        redirect_to article_path(@article)
-      end
+    if @article.update(article_params)
+      # @message_color = 'green'
+      flash[:notice] = "Article was successfully updated"
+      redirect_to article_path(@article)
     else
       @action = 'Update Article'
-      flash[:danger] = "Only user #{@article.user.username} can update this article"
-      redirect_to article_path
+      render 'edit'
     end
   end
 
