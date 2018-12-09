@@ -1,6 +1,5 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
-
 // .navbar-brand {
 //  padding: 0 15px;
 //  height: 50px;
@@ -8,13 +7,15 @@
 // }
 //
 
-
 body {
-   background-color: white;
+  background-color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  zoom: 0.90;
+  // font-size: 14px;
 }
 
 .main {
-  top:60px;
+  top: 60px;
 }
 
 .navbar {
@@ -33,7 +34,6 @@ body {
   margin: 5px;
 }
 
-
 #menu {
   position: relative;
   text-decoration: none;
@@ -50,7 +50,6 @@ body {
   color: #0d60ac;
   /* text-shadow: 0px, 0px, #ccc; */
 }
-
 /* #menu:not(:hover) {
      color: white;
  } */
@@ -58,10 +57,9 @@ body {
   color: #0d60ac;
 }
 
-
 #logo {
   float: left;
-  font-family:impact;
+  font-family: impact;
   font-size: 1.5em;
   color: white;
   text-transform: uppercase;
