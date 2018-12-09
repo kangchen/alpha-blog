@@ -5,7 +5,7 @@
     <div class="center">
       <hr>
 
-        <%= render 'shared/card', obj: @article %>
+        <%= render 'shared/card', obj: @article, length: '1000', width: '500px' %>
 
         <small>Created by
           <%= link_to @article.user.username, user_path(@article.user.id) %>

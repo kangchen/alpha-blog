@@ -1,0 +1,20 @@
+<hr>
+
+<% @category_name.each do | n | %>
+  <h3 class="header">
+    Category: <%= n.name %>
+  </h3>
+<% end %>
+<!-- </div> -->
+<hr>
+<div class="container">
+  <div class="row">
+
+    <% @category.each do | a | %>
+      <a href="http://<%= IPADDRESS %>/articles/<%= a.id %>" style="text-decoration:none">
+        <%= render 'shared/card', obj: a, length: '200', width: '310px' %>
+      </a>
+    <% end %>
+
+  </div>
+</div>

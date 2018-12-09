@@ -17,9 +17,8 @@
     <!-- <div class="col"> -->
       <% @user.articles.each do | a | %>
         <a href="http://<%= IPADDRESS %>/articles/<%= a.id %>" style="text-decoration:none">
-
-          <%= render 'shared/card', obj: a %>
-
+            <%# <%= render 'shared/card', obj: a %>
+            <%= render 'shared/card', obj: a, length: '200', width: '310px' %>
         </a>
       <% end %>
       <!-- </div> -->

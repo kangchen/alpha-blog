@@ -1,6 +1,5 @@
 <%= render 'shared/paging', obj: @users %>
 
-<!-- <div style="position: relative;"> -->
   <hr>
   <h2 class="header">
     ALL ALPHA BLOGGERS
@@ -20,11 +19,11 @@
       <!-- <div class="col" style="width:250px"> -->
         <% @users.each do |user| %>
           <!-- <hr> -->
+
           <div class="card-deck card col-sm-2">
             <div class="user-card">
               <div class="user-card-body">
                 <h3 class="card-title">
-                  <!-- <hr> -->
                   <br>
                   <%= link_to user.username.upcase, user_path(user) %>
                 </h3>
@@ -39,9 +38,7 @@
               </div>
             </div>
           </div>
-
         <% end %>
-      <!-- </div> -->
+
     </div>
   </div>
-<!-- </div> -->

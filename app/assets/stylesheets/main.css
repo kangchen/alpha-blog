@@ -157,19 +157,17 @@ body {
     position: fixed;
     top: 50%;
     /*500px;*/
-    right: 4%;
+    right: 5%;
     z-index: 10;
     /*60px;*/
 }
 
 .page-left {
     position: fixed;
-    /*fixed;*/
     top: 50%;
-    /*500px;*/
-    left: 4%;
+    left: 5%;
     z-index: 10;
-    /*60px;*/
+    margin: auto;
 }
 
 .paging {
@@ -240,4 +238,20 @@ body {
    color: #262626;
    text-decoration: none;
    background-color: #f6daca;
+}
+
+.badge {
+  background-color: #CEF6F5;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.input_checkbox input {
+  width: auto !important;
+}
+
+.cathover:hover {
+  background-color: #f9875b;
+  /* border-radius: 45px 45px 45px 45px; */
 }

@@ -7,8 +7,9 @@
     </h3>
 
     <hr>
+    <!-- <div class="center" style="z-index: 100"> -->
     <% will_paginate @articles %>
-
+<!-- </div> -->
     <small style="float:right; font-weight:bold">
       <%= @articles.current_page %> / <%= @articles.total_pages %>
     </small>
