@@ -1,0 +1,27 @@
+<%= render 'shared/errors', obj: @category %>
+<hr>
+<div align="center">
+  <%= form_for(@category, :html => {class: "form-horizontal", role: "form"}) do  |a| %>
+    <div class="form-group">
+      <!-- <div class="row"> -->
+        <div align="left" class="col-sm-8">
+          <%= a.label :name %>
+        </div>
+        <div class="col-sm-8">
+          <%= a.text_field :name, class: "form-control", placeholder: "Category name", autofocus: true %>
+        </div>
+      <!-- </div> -->
+    </div>
+
+    <div class="form-group">
+      <!-- <div class="row"> -->
+        <span style="margin:10px">
+          <%= a.submit class: 'btn btn-primary btn-lg' %>
+        </span>
+        <% end %>
+        <span>
+          <%= link_to 'Cancel', categories_path, :method => :get, class: 'btn btn-primary btn-lg' %>
+        </span>
+      </div>
+    </div>
+</div>

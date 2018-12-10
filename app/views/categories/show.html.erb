@@ -1,11 +1,17 @@
-<hr>
-
+<!-- <hr> -->
 <% @category_name.each do | n | %>
+<!-- <body style="background-image: url('https://picsum.photos/200/300/?image=999'); background-size:100% 100%;"> -->
+
   <h3 class="header">
-    Category: <%= n.name %>
+    CATEGORY: <%= n.name.upcase %>
   </h3>
+  <% if logged_in? and current_user.admin? %>
+    <%= link_to "EDIT CATEGORY NAME", edit_category_path(params[:id]) %>
+  <% end %>
+<!-- </body> -->
 <% end %>
 <!-- </div> -->
+
 <hr>
 <div class="container">
   <div class="row">
