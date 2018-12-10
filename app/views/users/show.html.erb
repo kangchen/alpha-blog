@@ -4,7 +4,8 @@
     <%= @user.username %>'s page</h3>
   <div align="center">
     <div style="">
-      <%= gravatar_for @user %>
+      <%# <%= gravatar_for @user %>
+       <img src='https://picsum.photos/200/300?image=<%= @user.id.to_i + LOREM_PIC %>' class="profile">
     </div>
     <h4 align="center">
       <%= @user.username %>'s articles
@@ -14,13 +15,13 @@
 
   <div class="container">
     <div class="row">
-    <!-- <div class="col"> -->
+
       <% @user.articles.each do | a | %>
         <a href="http://<%= IPADDRESS %>/articles/<%= a.id %>" style="text-decoration:none">
             <%# <%= render 'shared/card', obj: a %>
             <%= render 'shared/card', obj: a, length: '200', width: '310px' %>
         </a>
       <% end %>
-      <!-- </div> -->
+
   </div>
 </div>

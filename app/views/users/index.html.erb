@@ -14,12 +14,11 @@
 
   <% will_paginate @users %>
 
-  <div class="parent">
+  <div class="container">
     <div class="row">
       <!-- <div class="col" style="width:250px"> -->
         <% @users.each do |user| %>
           <!-- <hr> -->
-
           <div class="card-deck card col-sm-2">
             <div class="user-card">
               <div class="user-card-body">
@@ -27,7 +26,10 @@
                   <br>
                   <%= link_to user.username.upcase, user_path(user) %>
                 </h3>
-                <%= link_to gravatar_for(user), user_path(user) %>
+                <%# <%= link_to gravatar_for(user), user_path(user) %>
+                <a href="http://<%= IPADDRESS %>/users/<%= user.id %>" style="text-decoration:none; cursor:pointer">
+                  <img src='https://picsum.photos/200/300?image=<%= user.id.to_i + LOREM_PIC %>' class="profile" />
+                </a>
                 <hr>
                 <small>
                   <%= pluralize(user.articles.count, "article") if user.articles %>
