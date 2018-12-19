@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<% if logged_in? and current_user.admin? %>
+
+    <h1>Avators</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Uid</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @avators.each do |avator| %>
+        <tr>
+          <td><%= avator.uid %></td>
+          <td><%= link_to 'Show', avator %></td>
+          <td><%= link_to 'Edit', edit_avator_path(avator) %></td>
+          <td><%= link_to 'Destroy', avator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'New Avator', new_avator_path %>
+
+    <% else %>
+
+    <div class="center">
+      <h2 style="color: red; font-weight: bold">
+        THIS PAGE IS FOR ADMIN ONLY!
+      </h2>
+      <br><br>
+      <%= link_to 'Go Back', articles_path, class: 'btn btn-primary btn-lg' %>
+    </div>
+<% end %>
+
+<br>

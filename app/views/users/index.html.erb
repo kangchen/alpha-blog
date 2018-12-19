@@ -4,7 +4,6 @@
   <h2 class="header">
     ALL ALPHA BLOGGERS
   </h2>
-
   <hr>
   <% will_paginate @users %>
 
@@ -24,11 +23,15 @@
               <div class="user-card-body">
                 <h3 class="card-title">
                   <br>
+
                   <%= link_to user.username.upcase, user_path(user) %>
                 </h3>
-                <%# <%= link_to gravatar_for(user), user_path(user) %>
+
+                <%# <%= get_avator_image(user) %>
                 <a href="http://<%= IPADDRESS %>/users/<%= user.id %>" style="text-decoration:none; cursor:pointer">
-                  <img src='https://picsum.photos/200/300?image=<%= user.id.to_i + LOREM_PIC %>' class="profile" />
+
+                  <img src='https://picsum.photos/200/300?image=<%= (user.id.to_i % 1000) + LOREM_PIC %>' class="profile" />
+
                 </a>
                 <hr>
                 <small>

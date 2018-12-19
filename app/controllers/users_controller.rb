@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def index
     # @users = User.all
     @users = User.paginate(page: params[:page], :per_page => PER_PAGE).order('username ASC')
-    expires_in 3.minutes, :public => true
+    # expires_in 3.minutes, :public => true
   end
 
   def new
@@ -54,6 +54,7 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+
   private
   def user_params
     params.require("user").permit(:username, :email, :password)
@@ -76,4 +77,5 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
+
 end

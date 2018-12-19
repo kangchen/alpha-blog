@@ -1,0 +1,58 @@
+<%= render 'shared/errors', obj: @avator %>
+<!-- Modal -->
+<div class="modal fade center" id="confirmBox" tabindex="-1" data-backdrop="true" role="dialog" aria-labelledby="confirmBoxLabel" aria-hidden="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmBoxLabel">Avator</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+        <%= link_to 'X', edit_user_path(current_user.id), method: :get, :style=>'text-decoration: none; font-weight:bold; color:black' %>
+      </div>
+
+
+        <%= form_with(model: avator, local: true) do |form| %>
+
+        <div class="modal-body">
+          <% if avator.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(avator.errors.count, "error") %> prohibited this avator from being saved:</h2>
+
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= form.hidden_field :uid, :value => current_user.id %>
+          </div>
+
+          <div class="field">
+            <%= form.label :image %>
+            <%= form.file_field :image %>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+          <div class="actions">
+            <%= form.submit class: 'btn btn-outline-primary btn-lg' %>
+          </div>
+
+        </div>
+        <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+
+    $(document).ready(function () {
+      $("#confirmBox").modal('show');
+    });
+
+</script>

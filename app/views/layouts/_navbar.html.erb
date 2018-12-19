@@ -60,7 +60,11 @@
         <% if logged_in? %>
         <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <% if @avator_image.count > 0 %>
+            <%= image_tag(@avator_image[0].image, class: 'profile', style: 'width:32px; height:32px') %> <%=  "Admin" if current_user.admin? %>
+            <% else %>
             <img src='https://picsum.photos/200/300?image=<%= current_user.id.to_i + LOREM_PIC %>' class="profile" style="width:32px; height:32px"/> <%=  "Admin" if current_user.admin? %>
+            <% end %>
           </a>
           <div class="dropdown-menu">
             <!-- <a class="dropdown-item" href="#">Action</a> -->

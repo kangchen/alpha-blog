@@ -260,5 +260,6 @@ body {
   height: 75px;
   width: 75px;
   border-radius: 50%;
-  box-shadow:2px 2px 1px #aaa;
+  border: 2px solid #f9875b;
+  /* box-shadow:2px 2px 1px #aaa; */
 }

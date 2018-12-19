@@ -1,0 +1,3 @@
+module AvatorsHelper
+
+end

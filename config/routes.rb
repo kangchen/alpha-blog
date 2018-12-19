@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :avators
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # root 'pages#home'
   root 'pages#home'
   get 'about', to: 'pages#about'
   post 'confirm', to: 'users#confirm'
 
+  resources :avators
   resources :articles
 
   get 'signup', to: 'users#new'

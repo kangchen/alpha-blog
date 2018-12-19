@@ -1,7 +1,13 @@
 <%= render 'shared/errors', obj: @user %>
 <hr>
 <div align="center" class="header">
-<h3><img src='https://picsum.photos/200/300?image=<%= @user.id.to_i + LOREM_PIC %>' class="profile" /> EDIT YOUR PROFILE</h3>
+  <% if @avator_image.count > 0 %>
+<h3><a href="http://<%= IPADDRESS %>/avators/<%= @avator_image[0].id %>/edit"> <%= image_tag(@avator_image[0].image, class: 'profile') %></a> EDIT YOUR PROFILE</h3>
+
+  <% else %>
+  <h3><a href="http://<%= IPADDRESS %>/avators/new"><img src='https://picsum.photos/200/300?image=<%= (@user.id.to_i % 1000) + LOREM_PIC %>' class="profile" /></a> EDIT YOUR PROFILE</h3>
+  <% end %>
+
 </div>
 <hr>
 <div class="">
