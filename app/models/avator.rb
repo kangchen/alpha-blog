@@ -2,8 +2,8 @@ class Avator < ApplicationRecord
   has_one_attached :image
   validate :image_type
 
-  def img_resize(image)
-    return self.image.variant(resize: '128x128!').processed
+  def img_resize(size)
+    return self.image.variant(resize: "#{size} x #{size}!").processed
   end
 
   private
