@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'confirm', to: 'users#confirm'
 
   resources :avators
+
   resources :articles
 
   get 'signup', to: 'users#new'

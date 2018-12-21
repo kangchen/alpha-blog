@@ -46,6 +46,7 @@ class AvatorsController < ApplicationController
 
   # GET /avators/1/edit
   def edit
+    # @avator avator_size
   end
 
 
@@ -71,10 +72,11 @@ class AvatorsController < ApplicationController
   # DELETE /avators/1.json
   def destroy
     @avator.destroy
-    respond_to do |format|
-      format.html { redirect_to avators_url, notice: 'Avator was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to avators_url, notice: 'Avator was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
+    redirect_to avators_url
   end
 
   private
