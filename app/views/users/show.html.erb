@@ -8,7 +8,7 @@
       <% if @avator_image != nil && @avator_image.count > 0 && @user == current_user %>
       <%= image_tag(@avator_image[0].img_resize(80), class: 'profile') %>
       <% else %>
-       <img src='https://picsum.photos/200/300?image=<%= (@user.id.to_i % 1000) + LOREM_PIC %>' class="profile">
+       <img src='https://picsum.photos/80/80?image=<%= (@user.id.to_i % 1000) + LOREM_PIC %>' class="profile">
       <% end %>
     </div>
     <h4 align="center">
