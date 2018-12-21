@@ -1,6 +1,6 @@
 class AvatorsController < ApplicationController
   before_action :set_avator, only: [:show, :edit, :update, :destroy]
-  # before_action :require_user, except: [:index, :show, :new, :create]
+  before_action :require_user, except: [:index, :show, :new, :create]
   # before_action :get_avator_image, only: [:edit]
   # GET /avators
   # GET /avators.json
