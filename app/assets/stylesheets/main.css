@@ -264,8 +264,6 @@ body {
 }
 
 .picsum {
-  height: 80px;
-  width: 80px;
   border-radius: 50%;
   border: 2px solid #f9875b;
 }
