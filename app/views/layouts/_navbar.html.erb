@@ -62,7 +62,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <% if @avator_image.count > 0 %>
             <%= image_tag(@avator_image[0].img_resize(36), class: 'profile') %> <%=  "Admin" if current_user.admin? %>
-            <% elimg_resize(36)
+            <% else %>
             <img src='https://picsum.photos/200/300?image=<%= current_user.id.to_i + LOREM_PIC %>' class="picsum" style="width:32px; height:32px"/> <%=  "Admin" if current_user.admin? %>
             <% end %>
           </a>
