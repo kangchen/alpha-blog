@@ -8,8 +8,8 @@ class Avator < ApplicationRecord
 
   private
   def image_type
-    if image.attached? && !image.content_type.in?(%w(image/jpeg image/png))
-      errors.add(:image, 'Must be a JPEG or PNG image file')
+    if image.attached? && !image.content_type.in?(%w(image/jpeg image/png image/gif))
+      errors.add(:image, 'Must be a JPEG, GIF, or PNG image file')
     elsif image.attached? == false
       errors.add(:image, 'required')
     end
