@@ -16,20 +16,7 @@
           <!-- <a class="nav-link menu" href="#" id='menu'>Link</a> -->
           <%= link_to "Members", users_path, class: "nav-link", id: 'menu' %>
         </li>
-        <% if logged_in? %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Actions
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <!-- <a class="dropdown-item" href="#">Action</a> -->
-            <%= link_to "Add Article", new_article_path, class: "dropdown-item" %>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <% end %>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categories
@@ -61,16 +48,15 @@
         <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-            <%= get_avator_image(current_user, 36) %> 
+            <%= get_avator_image(current_user, 36) %>
             <%=  "Admin" if current_user.admin? %>
 
           </a>
           <div class="dropdown-menu">
             <!-- <a class="dropdown-item" href="#">Action</a> -->
-            <a class="dropdown-item" <%= link_to "Edit your profile", edit_user_path(current_user) %></a>
             <a class="dropdown-item" <%= link_to "View your articles", user_path(current_user) %></a>
-            <!-- <div class="dropdown-divider"></div> -->
-            <a class="dropdown-item" href="#">Something else here</a>
+            <%= link_to "Add Article", new_article_path, class: "dropdown-item" %>
+            <a class="dropdown-item" <%= link_to "Edit your profile", edit_user_path(current_user) %></a>
           </div>
         </div>
 
