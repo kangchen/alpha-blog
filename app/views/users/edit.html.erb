@@ -2,10 +2,10 @@
 <hr>
 <div align="center" class="header">
   <% if @avator_image.count > 0 %>
-<h3><a href="http://<%= IPADDRESS %>/avators/<%= @avator_image[0].id %>/edit"> <%= image_tag(@avator_image[0].img_resize(80), class: 'profile') %></a> EDIT YOUR PROFILE</h3>
+<h3><a href="http://<%= IPADDRESS %>/avators/<%= @avator_image[0].id %>/edit"> <%= get_avator_image(@user, 80) %></a> EDIT YOUR PROFILE</h3>
 
   <% else %>
-  <h3><a href="http://<%= IPADDRESS %>/avators/new"><img src='https://picsum.photos/200/300?image=<%= (@user.id.to_i % 1000) + LOREM_PIC %>' class="picsum" /></a> EDIT YOUR PROFILE</h3>
+  <h3><a href="http://<%= IPADDRESS %>/avators/new"><%= get_avator_image(@user, 80) %></a> EDIT YOUR PROFILE</h3>
   <% end %>
 
 </div>

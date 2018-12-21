@@ -4,18 +4,17 @@
     <%= @user.username %>'s page</h3>
   <div align="center">
     <div style="">
-      <%# <%= gravatar_for @user %>
-      <% if @avator_image != nil && @avator_image.count > 0 && @user == current_user %>
-      <%= image_tag(@avator_image[0].img_resize(80), class: 'profile') %>
-      <% else %>
-       <img src='https://picsum.photos/200/300?image=<%= (@user.id.to_i % 1000) + LOREM_PIC %>' class="picsum">
-      <% end %>
+      <%= get_avator_image(@user, 80) %>
     </div>
+
     <h4 align="center">
       <%= @user.username %>'s articles
     </h4>
   </div>
 </div>
+
+
+
 
   <div class="container">
     <div class="row">

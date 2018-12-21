@@ -17,11 +17,4 @@ module ApplicationHelper
     super *[collection_or_options, options].compact
   end
 
-  def get_avator_image(user)
-    avator_image = Avator.where("uid = ?", user.id)
-    if avator_image.count > 0
-      image_tag(avator_image[0].image)
-    end
-  end
-  
 end

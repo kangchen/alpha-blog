@@ -2,12 +2,7 @@
 
 <div class="center">
 
-  <% if @avator_image.count > 0 %>
-  <%= image_tag(@avator_image[0].img_resize(300), class: 'profile') %> <%=  "Admin" if current_user.admin? %>
-  <% else %>
-  <img src='https://picsum.photos/200/300?image=<%= current_user.id.to_i + LOREM_PIC %>' class="picsum" style="width:300px; height:300px"/> <%=  "Admin" if current_user.admin? %>
-  <% end %>
-
+  <%= get_avator_image(current_user, 300) %>
   <br><br>
   <%= form_with(model: avator, local: true) do |form| %>
 
@@ -50,7 +45,7 @@
       <% if @path == 'new' %>
         <%= link_to 'X', new_avator_path, method: :get %>
       <% else %>
-        <%= link_to 'X', new_avator_path, method: :get %>
+        <%= link_to 'X', edit_avator_path(id: params[:id]), method: :get %>
       <% end %>
     </div>
 
@@ -68,9 +63,9 @@
 <br>
     <div class="modal-footer">
       <% if @path == 'new' %>
-        <%= link_to 'Close', new_avator_path, method: :get, :class => 'btn btn-primary btn-lg' %>
+        <%= link_to 'Close', new_avator_path, method: :get, :class => 'btn btn-outline-primary btn-lg' %>
       <% else %>
-        <%= link_to 'Close', new_avator_path, method: :get, :class => 'btn btn-primary btn-lg' %>
+        <%= link_to 'Close', edit_avator_path(id: params[:id]), method: :get, :class => 'btn btn-outline-primary btn-lg' %>
       <% end %>
     </div>
 

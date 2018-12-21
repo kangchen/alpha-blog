@@ -29,9 +29,7 @@
 
                 <%# <%= get_avator_image(user) %>
                 <a href="http://<%= IPADDRESS %>/users/<%= user.id %>" style="text-decoration:none; cursor:pointer">
-
-                  <img src='https://picsum.photos/75/75?image=<%= (user.id.to_i % 1000) + LOREM_PIC %>' class="profile" />
-
+                  <%= get_avator_image(user, 80) %>
                 </a>
                 <hr>
                 <small>
