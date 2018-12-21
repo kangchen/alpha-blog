@@ -1,7 +1,13 @@
 <%= render 'shared/errors', obj: @avator %>
 
 <div class="center">
-  <%= image_tag(@avator_image[0].img_resize(300), class: 'profile') %>
+
+  <% if @avator_image.count > 0 %>
+  <%= image_tag(@avator_image[0].img_resize(300), class: 'profile') %> <%=  "Admin" if current_user.admin? %>
+  <% else %>
+  <img src='https://picsum.photos/200/300?image=<%= current_user.id.to_i + LOREM_PIC %>' class="picsum" style="width:300px; height:300px"/> <%=  "Admin" if current_user.admin? %>
+  <% end %>
+
   <br><br>
   <%= form_with(model: avator, local: true) do |form| %>
 
@@ -41,7 +47,11 @@
     <div class="modal-header">
       <h5 class="modal-title" id="confirmBoxLabel">Avator</h5>
       <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> -->
-      <%= link_to 'X', edit_avator_path, method: :get, :style=>'text-decoration: none; font-weight:bold; color:black' %>
+      <% if @path == 'new' %>
+        <%= link_to 'X', new_avator_path, method: :get %>
+      <% else %>
+        <%= link_to 'X', new_avator_path, method: :get %>
+      <% end %>
     </div>
 
 <br>
@@ -57,7 +67,11 @@
     </div>
 <br>
     <div class="modal-footer">
-      <%= link_to 'Close', edit_avator_path, method: :get, :class => 'btn btn-primary btn-lg' %>
+      <% if @path == 'new' %>
+        <%= link_to 'Close', new_avator_path, method: :get, :class => 'btn btn-primary btn-lg' %>
+      <% else %>
+        <%= link_to 'Close', new_avator_path, method: :get, :class => 'btn btn-primary btn-lg' %>
+      <% end %>
     </div>
 
 </div>

@@ -15,10 +15,11 @@ class AvatorsController < ApplicationController
 
   # GET /avators/new
   def new
+    @path = 'new'
     @avator = Avator.new
     check = Avator.where("uid = ?", current_user.id)
     if check.count > 0
-      flash[:danger] = "Use update to change your avator."
+
       redirect_to edit_user_path(current_user.id)
     end
   end
@@ -46,6 +47,7 @@ class AvatorsController < ApplicationController
 
   # GET /avators/1/edit
   def edit
+    @path = 'edit'
     # @avator avator_size
   end
 
