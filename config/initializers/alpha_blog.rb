@@ -1,6 +1,6 @@
 PER_PAGE = 15
 # IPADDRESS = 'localhost:3000'
-IPADDRESS = '18.222.239.247'
+IPADDRESS = '3.17.60.53'
 LOREM_PIC = 100
 
 # Staging Server IP

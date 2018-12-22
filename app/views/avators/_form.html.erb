@@ -25,66 +25,63 @@
 
     <br><br>
     <div class="actions">
-    <%= form.submit class: 'btn btn-outline-primary btn-lg', onclick: "validate()" %>
+      <%= form.submit class: 'btn btn-outline-primary btn-lg', onclick: "validate()" %>
 
   <% end %>
 
-  <%= link_to "Cancel", edit_user_path(current_user.id), class: 'btn btn-outline-primary btn-lg' %>
-</div>
+      <%= link_to "Cancel", edit_user_path(current_user.id), class: 'btn btn-outline-primary btn-lg' %>
+    </div>
 
 </div>
 
 <!-- Modal -->
 <div class="modal fade center" id="confirmBox" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="confirmBoxLabel" aria-hidden="false">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
 
-    <div class="modal-header">
-      <h5 class="modal-title" id="confirmBoxLabel">Avator</h5>
-      <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> -->
-      <% if @path == 'new' %>
-        <%= link_to 'X', new_avator_path, method: :get %>
-      <% else %>
-        <%= link_to 'X', edit_avator_path(id: params[:id]), method: :get %>
-      <% end %>
-    </div>
-
-<br>
-    <div class="modal-body">
-
-      <div class="" style="color: red; font-size:20px">
-        <ul>
-          <li>Image file must be less than 500KB (0.5MB).</li>
-          <li>File extension must be: jpeg, jpg, png or gif </li>
-        </ul>
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmBoxLabel">Avator</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> -->
+        <% if @path == 'new' %>
+          <%= link_to 'X', new_avator_path, method: :get %>
+        <% else %>
+          <%= link_to 'X', edit_avator_path(id: params[:id]), method: :get %>
+        <% end %>
       </div>
 
+      <br>
+      <div class="modal-body">
+
+        <div class="" style="color: red; font-size:20px">
+          <ul>
+            <li>Image file must be less than 500KB (0.5MB).</li>
+            <li>File extension must be: jpeg, jpg, png or gif </li>
+          </ul>
+        </div>
+
+      </div>
+      <br>
+      <div class="modal-footer">
+        <% if @path == 'new' %>
+          <%= link_to 'Close', new_avator_path, method: :get, :class => 'btn btn-outline-primary btn-lg' %>
+        <% else %>
+          <%= link_to 'Close', edit_avator_path(id: params[:id]), method: :get, :class => 'btn btn-outline-primary btn-lg' %>
+        <% end %>
+      </div>
     </div>
-<br>
-    <div class="modal-footer">
-      <% if @path == 'new' %>
-        <%= link_to 'Close', new_avator_path, method: :get, :class => 'btn btn-outline-primary btn-lg' %>
-      <% else %>
-        <%= link_to 'Close', edit_avator_path(id: params[:id]), method: :get, :class => 'btn btn-outline-primary btn-lg' %>
-      <% end %>
-    </div>
-
+  </div>
 </div>
-</div>
-</div>
-
-
 
 <script>
-// function validate() {
+
   $('#avator_image').bind('change', function () {
-    var size_in_megabyte = this.files[0].size;
+    var fileSize = this.files[0].size;
     var fileExtension = ['jpeg', 'jpg', 'png', 'gif'];
-    if ((size_in_megabyte > 500000) || ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1)) {
+    if ((fileSize > 500000) || ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1)) {
       $(document).ready(function () {
         $("#confirmBox").modal('show');
       });
     }
   });
-//  }
+
 </script>
