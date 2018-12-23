@@ -1,27 +1,26 @@
 <div>
-  <h3 align="center">
-    Welcome to
-    <%= @user.username %>'s page</h3>
+  <h3 align="center" class="header">
+    WELCOME TO
+    <%= @user.username.upcase %> ARTICLES' PAGE </h3>
   <div align="center">
     <div style="">
-      <%= get_avator_image(@user, 80) %>
+      <%= get_avator_image(@user, 100) %>
     </div>
 
-    <h4 align="center">
-      <%= @user.username %>'s articles
-    </h4>
   </div>
 </div>
 
-
+<hr>
   <div class="container">
     <div class="row">
 
       <% @user.articles.each do | a | %>
-        <a href="http://<%= IPADDRESS %>/articles/<%= a.id %>" style="text-decoration:none">
+        <div class="col-lg-6">
+          <a href="http://<%= IPADDRESS %>/articles/<%= a.id %>" style="text-decoration:none;font-size:16px">
             <%# <%= render 'shared/card', obj: a %>
-            <%= render 'shared/card', obj: a, length: '200', width: '310px' %>
-        </a>
+            <%= render 'shared/card', obj: a, length: '200', width: '435px' %>
+          </a>
+        </div>
       <% end %>
 
   </div>

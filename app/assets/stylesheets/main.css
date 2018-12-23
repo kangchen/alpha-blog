@@ -189,8 +189,13 @@ body {
 
 .article-card-body {
   background-color: #d8e5eb;
-  width: 310px;
-  height: 250px;
+  text-align: left;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration:none;
+  /* width: 310px; */
+  /* height: 250px; */
 }
 
 .card-deck {
@@ -203,23 +208,25 @@ body {
 }
 
 .card-title {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 .user-card {
-  background-color: #f9875b;
-  /* width: 240px; */
+  /* background-color: #f9875b; */
+  width: 240px;
   /* height: 245px; */
   padding: 3px;
-  box-shadow: 4px 4px #827b7b;
+  /* align-items: center; */
+  /* box-shadow: 4px 4px #827b7b; */
 }
 
 
 .user-card-body {
   background-color: #d8e5eb;
-  width: 180px;
-  height: 240px;
+  width: 210px;
+  height: 250px;
+  box-shadow: 4px 4px #827b7b;
 }
 
 .error {

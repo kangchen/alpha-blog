@@ -15,10 +15,10 @@
 
   <div class="container">
     <div class="row">
-      <!-- <div class="col" style="width:250px"> -->
         <% @users.each do |user| %>
+        <div class="col-md-4 col-lg-3">
           <!-- <hr> -->
-          <div class="card-deck card col-sm-2">
+          <div class="card-deck card">
             <div class="user-card">
               <div class="user-card-body">
                 <h3 class="card-title">
@@ -27,7 +27,6 @@
                   <%= link_to user.username.upcase, user_path(user) %>
                 </h3>
 
-                <%# <%= get_avator_image(user) %>
                 <a href="http://<%= IPADDRESS %>/users/<%= user.id %>" style="text-decoration:none; cursor:pointer">
                   <%= get_avator_image(user, 80) %>
                 </a>
@@ -41,7 +40,7 @@
               </div>
             </div>
           </div>
+        </div>
         <% end %>
-
     </div>
   </div>

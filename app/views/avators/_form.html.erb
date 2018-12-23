@@ -53,10 +53,10 @@
       <div class="modal-body">
 
         <div class="" style="color: red; font-size:20px">
-          <ul>
-            <li>Image file must be less than 500KB (0.5MB).</li>
-            <li>File extension must be: jpeg, jpg, png or gif </li>
-          </ul>
+          <!-- <ul> -->
+            <p>Image file must be less than 500KB (0.5MB).</p>
+            <p>File extension must be: jpeg, jpg, png or gif </p>
+          <!-- </ul> -->
         </div>
 
       </div>
@@ -75,8 +75,8 @@
 <script>
 
   $('#avator_image').bind('change', function () {
-    var fileSize = this.files[0].size;
-    var fileExtension = ['jpeg', 'jpg', 'png', 'gif'];
+    let fileSize = this.files[0].size;
+    let fileExtension = ['jpeg', 'jpg', 'png', 'gif'];
     if ((fileSize > 500000) || ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1)) {
       $(document).ready(function () {
         $("#confirmBox").modal('show');
