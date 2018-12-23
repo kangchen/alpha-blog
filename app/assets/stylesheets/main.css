@@ -23,10 +23,11 @@ table, th, td {
 
 #logo {
   float: left;
-  font-size: 1.6em;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
+  /* font-family: 'Courgette', cursive; */
+  font-size: 1.6em;
   font-wight: bold;
 }
 
@@ -45,10 +46,10 @@ table, th, td {
 .header {
   font-weight: bold;
   text-shadow: 1px 1px #333;
-  font-family: sans-serif;
+  font-family: 'Exo', sans-serif;
   color: #0d60ac;
   margin: 5px;
-  text-align: center;
+  text-align: left;
   padding-top: 10px;
 }
 
