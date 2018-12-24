@@ -2,7 +2,7 @@
 <div class="center">
   <div class="">
 
-    <h2 class="header" style="margin:15px;" align="center">
+    <h2 class="header" style="margin:15px; text-align:center">
       ALPHA BLOG SIGNIN
     </h2>
     <br>
@@ -10,7 +10,7 @@
 
       <div class="form-group">
         <div class="control-label col-sm-8 form-format" align="left">
-          <%= f.label :email %>
+          <%= f.label :email, class: "label" %>
         </div>
         <div class="col-sm-8">
           <%= f.email_field :email, class: "form-control", size: 80, placeholder: "Enter email", autofocus: true %>
@@ -19,7 +19,7 @@
 
       <div class="form-group">
         <div class="control-label col-sm-8 form-format" align="left">
-          <%= f.label :password %>
+          <%= f.label :password, class: "label" %>
         </div>
         <div class="col-sm-8">
           <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>

@@ -38,6 +38,12 @@ table, th, td {
   color: #f2835a;
 }
 
+.label {
+  /* font-family: impact; */
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .btn-xlarge {
   font-size: 1.6em;
   font-family: impact;

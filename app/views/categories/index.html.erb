@@ -1,6 +1,6 @@
 <% content_for(:title, "Categories List") %>
 <hr>
-<h3 align="center" class="header">
+<h3 class="header">
   LISTING ALL CATEGORIES
 </h3>
 <hr>
@@ -10,7 +10,6 @@
   <div class="row">
 
     <% @categories.each do |category| %>
-       <%# <div style="cursor:pointer" onclick="category(<%= category.id %>
 
         <div class="card-deck col-sm-6 cathover" style="cursor:pointer; width:200px; height:130px;" onclick="category(<%= category.id %>)">
           <div class="card" style="padding: 3px; box-shadow: 4px 4px 2px #aaa; margin: 10px">
@@ -23,7 +22,6 @@
           </div>
         </div>
 
-      <!-- </div> -->
     <% end %>
   </div>
 </div>

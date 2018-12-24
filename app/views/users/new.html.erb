@@ -11,7 +11,7 @@
 
       <div class="form-group">
         <div class="control-label col-sm-8 form-format" align="left">
-          <%= f.label :username %>
+          <%= f.label :username, class: "label" %>
         </div>
         <div class="col-sm-8">
           <%= f.text_field :username, class: "form-control", size: 80, placeholder: "Enter username", autofocus: true %>
@@ -20,7 +20,7 @@
 
       <div class="form-group">
         <div class="control-label col-sm-8 form-format" align="left">
-          <%= f.label :email %>
+          <%= f.label :email, class: "label" %>
         </div>
         <div class="col-sm-8">
           <%= f.email_field :email, class: 'form-control', placeholder: "Enter email" %>
@@ -29,7 +29,7 @@
 
       <div class="form-group">
         <div class="control-label col-sm-8 form-format" align="left">
-          <%= f.label :password %>
+          <%= f.label :password, class: "label" %>
         </div>
         <div class="col-sm-8">
           <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
