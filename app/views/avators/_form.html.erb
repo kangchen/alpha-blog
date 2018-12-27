@@ -1,8 +1,20 @@
 <%= render 'shared/errors', obj: @avator %>
 
 <div class="center">
+  <table class="update_avator">
+    <tr>
+      <td class="update_avator"><%= get_avator_image(current_user, 200) %></td>
+      <td class="update_avator"><i class="fas fa-arrow-right fa-2x"></i></td>
+      <td class="update_avator"><img id="myAvator" class="profile" style="width:200px; height:200px;" /></td>
+    </tr>
 
-  <%= get_avator_image(current_user, 300) %>
+    <tr>
+      <td class="update_avator">Current</td>
+      <td class="update_avator"></td>
+      <td class="update_avator">New</td>
+    </tr>
+  </table>
+
   <br><br>
   <%= form_with(model: avator, local: true) do |form| %>
 
@@ -25,7 +37,7 @@
 
     <br><br>
     <div class="actions">
-      <%= form.submit class: 'btn btn-outline-primary btn-lg', onclick: "validate()" %>
+      <%= form.submit class: 'btn btn-outline-primary btn-lg' %>
 
   <% end %>
 
@@ -40,7 +52,7 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title" id="confirmBoxLabel">Avator</h5>
+        <h5 class="modal-title" id="confirmBoxLabel">Invalid File</h5>
         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> -->
         <a href="" title="close"> X </a>
       </div>
@@ -73,6 +85,13 @@
       $(document).ready(function () {
         $("#confirmBox").modal('show');
       });
+    }
+    else {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#myAvator').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(this.files[0]);
     }
   });
 
