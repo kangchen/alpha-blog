@@ -42,11 +42,7 @@
       <div class="modal-header">
         <h5 class="modal-title" id="confirmBoxLabel">Avator</h5>
         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> -->
-        <% if @path == 'new' %>
-          <%= link_to 'X', new_avator_path, method: :get %>
-        <% else %>
-          <%= link_to 'X', edit_avator_path(id: params[:id]), method: :get %>
-        <% end %>
+        <a href="" title="close"> X </a>
       </div>
 
       <br>
@@ -62,11 +58,7 @@
       </div>
       <br>
       <div class="modal-footer">
-        <% if @path == 'new' %>
-          <%= link_to 'Close', new_avator_path, method: :get, :class => 'btn btn-outline-primary btn-lg' %>
-        <% else %>
-          <%= link_to 'Close', edit_avator_path(id: params[:id]), method: :get, :class => 'btn btn-outline-primary btn-lg' %>
-        <% end %>
+        <a href="" title="close" class="btn btn-outline-primary btn-lg"> Close </a>
       </div>
     </div>
   </div>
