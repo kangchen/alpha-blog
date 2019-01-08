@@ -39,10 +39,23 @@
         </li>
         <!-- <li class="nav-item"> <a class="nav-link disabled" href="#">Disabled</a> </li> -->
         &nbsp&nbsp
-        <form class="form-inline my-2 my-lg-0">
+        <!-- <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn search" type="submit">Search</button>
-        </form>
+        </form> -->
+
+        <%= form_tag(searches_path, method: :get) do %>
+        <div class="content">
+          <div class="row" style="margin:5px">
+            <div class="col-sm-8">
+              <%= text_field_tag :str, params[:str], class: 'form-control mr-sm-2', placeholder: "article title or user" %>
+            </div>
+            <div>
+              <%= submit_tag 'Search', class: 'btn btn-primary search'%>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </ul>
         <% if logged_in? %>
         <div class="nav-item dropdown">
