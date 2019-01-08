@@ -1,55 +1,14 @@
 <br><br>
 
-<h3 align='left'><%= @search_str.count %> article(s) found</h3>
+<h3 align='left'><%= @search_str.count %>
+  article(s) found</h3>
 
 <% if @search_str.count > 0 %>
-  <div class="container">
-    <div class="row">
+  <%= render 'shared/listArticles', obj: @search_str, length: '150' %>
+<% end %>
 
-      <% @search_str.each do | a | %>
-        <div class="col-lg-6">
-          <a href="http://<%= IPADDRESS %>/articles/<%= a.id %>" style="text-decoration:none;font-size:16px">
-              <%= render 'shared/card', obj: a, length: '150' %>
-            </a>
-          </div>
-        <% end %>
-
-      </div>
-    </div>
-  <% end %>
-
-
-<h3 align='left'><%= @search_name.count %> user found</h3>
+<h3 align='left'><%= @search_name.count %>
+  user found</h3>
 <% if @search_name.count > 0 %>
-<div class="container">
-  <div class="row">
-      <% @search_name.each do |user| %>
-      <div class="col-md-4 col-lg-3">
-        <!-- <hr> -->
-        <div class="card-deck card">
-          <div class="user-card">
-            <div class="user-card-body">
-              <h3 class="card-title">
-                <br>
-
-                <%= link_to user.username.upcase, user_path(user) %>
-              </h3>
-
-              <a href="http://<%= IPADDRESS %>/users/<%= user.id %>" style="text-decoration:none; cursor:pointer">
-                <%= get_avator_image(user, 80) %>
-              </a>
-              <hr>
-              <small>
-                <%= pluralize(user.articles.count, "article") if user.articles %>
-                <% if logged_in? and current_user.admin? %>  <br>
-                <%= button_to "Delete this user", confirm_path(uid: user.id, name: user.username), class: "btn btn-danger", :method => :post %>
-                <% end %>
-              </small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
-  </div>
-</div>
+  <%= render 'shared/userCards', obj: @search_name %>
 <% end %>
