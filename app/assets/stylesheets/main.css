@@ -62,7 +62,6 @@ table, th, td {
 /************************************************/
 
 .notificationWindow {
-    position: fixed;
     color: black;
     opacity: 1;
     background: white;
@@ -73,6 +72,7 @@ table, th, td {
     width:450px;
     /*width: 1122px;*/
     height: auto;
+    /* cursor: grab; */
 }
 
 .parent {

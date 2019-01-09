@@ -1,27 +1,29 @@
-
+<div class="center" style="z-index:10">
 <% if obj.errors.any? %>
-<div id='notification' class="parent notificationWindow center" style="visibility:visible; z-index:10">
+  <div id='notification' class="parent notificationWindow" style="visibility:visible; z-index:10">
 
-  <div class='item' style="height:auto;">
-    <h5 style="color:black; float:right; margin:10px">
-    <a onclick="closeit('notification')" style="cursor:pointer; font-family:verdana">x</a></h5>
-    <h5 style="color:black; float:left; margin:10px">Notification</h5><br><br>
-    <hr>
-  </div>
+    <div class='item' style="height:auto;">
+      <h5 style="color:black; float:right; margin:10px">
+        <!-- <a onclick="closeit('notification')" style="cursor:pointer; font-family:verdana">x</a> -->
+        <%= link_to image_tag('close.png'), signup_path, style: "font-family:verdana; text-decoration:none" %>
+      </h5>
+      <h5 style="color:black; float:left; margin:10px">Notification</h5><br><br>
+      <hr>
+    </div>
 
-  <div class='item' style="height:auto;text-align: left;">
+    <div class='item' style="height:auto;text-align: left;">
       <ul>
-          <% obj.errors.full_messages.each do |msg| %>
-            <li class="error" style="font-size:1em; color:red;"><%= msg %></li>
-          <% end %>
+        <% obj.errors.full_messages.each do |msg| %>
+          <li class="error" style="font-size:1em; color:red;"><%= msg %></li>
+        <% end %>
       </ul>
-  </div>
-  <div class='item' style="float:right; height: auto;">
-    <hr>
-    <button type="button" class="btn btn-md btn-secondary" title="Close" onclick="closeit('notification');" style="opacity:1; float:right; margin:10px;">
-      Close
-    </button>
-  </div>
+    </div>
+    <div class='item'>
+      <hr>
+      <!-- <button type="button" class="btn btn-md btn-secondary" title="Close" onclick="closeit('notification');" style="opacity:1; float:right; margin:10px;"> Close </button> -->
+      <%= link_to "Close", signup_path, class: "btn btn btn-md btn-secondary", style: "float:right; margin: 10px" %>
+    </div>
 
-</div>
+  </div>
 <% end %>
+</div>
