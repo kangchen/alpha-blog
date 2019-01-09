@@ -49,6 +49,7 @@
           <div class="row" style="margin:5px">
             <div class="col-sm-8">
               <%= text_field_tag :str, params[:str], class: 'form-control mr-sm-2', placeholder: "article title or user" %>
+              <%= hidden_field_tag :cPath, request.original_fullpath %>
             </div>
             <div>
               <%= submit_tag 'Search', class: 'btn btn-primary search'%>

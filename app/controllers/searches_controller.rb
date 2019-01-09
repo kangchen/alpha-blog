@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
   def index
     if params[:str] == nil || params[:str] == '' || params[:str].squish.length < 3
       flash[:danger] = "Search text must be 3 or more characters"
-      redirect_to articles_path
+      redirect_to params[:cPath]
     else
       str = params[:str].to_s
       @search_str = Article.where("title like ?", '%' + str.squish! + '%' )
