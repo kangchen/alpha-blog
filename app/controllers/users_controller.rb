@@ -51,6 +51,11 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    image_ids = Avator.where("uid = ?", params[:id])
+    if image_ids.count > 0
+      @avator = Avator.find(image_ids[0].id)
+      @avator.destroy
+    end
     @user.destroy
     flash[:success] = "#{@user.username} and all articles created by #{@user.username} have been deleted"
     redirect_to users_path
