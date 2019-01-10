@@ -94,7 +94,7 @@ class AvatorsController < ApplicationController
 
     def require_user
       avator_user = Avator.where("id=?", params[:id]) if logged_in?
-      if !logged_in? || (avator_user[0].uid.to_s != current_user.id.to_s || !current_user.admin?)
+      if !logged_in? || (avator_user[0].uid.to_s != current_user.id.to_s)
         flash[:danger] = "You are not authorized to perform that action"
         redirect_to edit_user_path(current_user.id)
       end
