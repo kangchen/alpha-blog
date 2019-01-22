@@ -1,14 +1,11 @@
-<!-- Modal -->
 <div class="modal fade center" id="confirmBox" tabindex="-1" data-backdrop="true" role="dialog" aria-labelledby="confirmBoxLabel" aria-hidden="false">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
       <div class="modal-header">
         <h5 class="modal-title" id="confirmBoxLabel">Delete Confirmation</h5>
-        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button> -->
-        <%= link_to 'X', users_path, method: :get, :style=>'text-decoration: none; font-weight:bold; color:black' %>
+
+        <%= link_to image_tag('close.png'), users_path, method: :get, :style=>'text-decoration: none; font-weight:bold; color:black' %>
       </div>
 
       <div class="modal-body">
@@ -28,7 +25,7 @@
 
 <script>
 
-    $(document).ready(function () {
+    $(function () {
       $("#confirmBox").modal('show');
     });
 

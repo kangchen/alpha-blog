@@ -82,21 +82,21 @@ class AvatorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_avator
-      @avator = Avator.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_avator
+    @avator = Avator.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def avator_params
-      params.require(:avator).permit(:uid, :image)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def avator_params
+    params.require(:avator).permit(:uid, :image)
+  end
 
-    def require_user
-      avator_user = Avator.where("id=?", params[:id]) if logged_in?
-      if !logged_in? || (avator_user[0].uid.to_s != current_user.id.to_s)
-        flash[:danger] = "You are not authorized to perform that action"
-        redirect_to edit_user_path(current_user.id)
-      end
+  def require_user
+    avator_user = Avator.where("id=?", params[:id]) if logged_in?
+    if !logged_in? || (avator_user[0].uid.to_s != current_user.id.to_s)
+      flash[:danger] = "You are not authorized to perform that action"
+      redirect_to edit_user_path(current_user.id)
     end
+  end
 end
