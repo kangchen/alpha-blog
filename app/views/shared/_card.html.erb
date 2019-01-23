@@ -5,7 +5,7 @@
       <div>
         <br>
         <h5 class="card-title" align="center">
-          <%= obj.title.upcase %>
+          <%= get_avator_image(obj.user, 50) %> <%= obj.title.upcase %>
         </h5>
         <hr>
         <% if obj.description.chars.length >= length.to_i  %>
