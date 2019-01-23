@@ -1,14 +1,15 @@
 <br><br>
 
-<h3 align='left'><%= @search_str.count %>
-  article(s) found</h3>
-
 <% if @search_str.count > 0 %>
-  <%= render 'shared/listArticles', obj: @search_str, length: '150' %>
+  <h3 align='left'><%= @search_str.count %> article(s) found</h3>
+  <% if @search_str.count > 0 %>
+    <%= render 'shared/listArticles', obj: @search_str, length: '150' %>
+  <% end %>
 <% end %>
 
-<h3 align='left'><%= @search_name.count %>
-  user found</h3>
 <% if @search_name.count > 0 %>
-  <%= render 'shared/userCards', obj: @search_name %>
+  <h3 align='left'><%= @search_name.count %> user found</h3>
+  <% if @search_name.count > 0 %>
+    <%= render 'shared/userCards', obj: @search_name %>
+  <% end %>
 <% end %>
