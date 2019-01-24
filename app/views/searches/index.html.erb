@@ -13,3 +13,7 @@
     <%= render 'shared/userCards', obj: @search_name %>
   <% end %>
 <% end %>
+
+<% if @search_str.count == 0 && @search_name.count == 0 %>
+  <h3 class="center" style="color:red"> No search data has been found! </h3>
+<% end %>
